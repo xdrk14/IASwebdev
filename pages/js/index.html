@@ -920,7 +920,7 @@
     <script src="script.js"></script>
     <script>
       // Helper: Check if an element's center is within the threshold of the viewport center.
-      function isElementNearCenter(elem, threshold = 50) {
+      function isElementNearCenter(elem, threshold = 120) {
         const rect = elem.getBoundingClientRect();
         const elemCenter = rect.top + rect.height / 2;
         const viewportCenter = window.innerHeight / 2;
