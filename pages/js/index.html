@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+          Metadata and styling for an in-depth HTML tutorial on the functionality of HTML.
+          This head section includes character encoding, a responsive viewport setting,
+          an external font from Google Fonts, and internal CSS that follows your provided
+          reference color guide. The CSS also defines styles for code examples and diagram placeholders.
+        -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="styles.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-funky.min.css" rel="stylesheet">
+        <title>Detailed Javascript Tutorial</title>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" type="text/css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script> 
+        <link rel="icon" href="../../assets/images/JS.png" type="image/png">
+      </head>
+<body>
+  <header>
+    <h1>Detailed JS Tutorial</h1>
+    <p>Understanding the Functionality of Javascript: A deep dive into Javascript structure, components, and best practices.</p>
+    <div class="progress-bar-container" id="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+  </header>
+  
+  <main>
+    <!-- 1. Introduction to JavaScript -->
+    <section id="introduction">
+        <h2>1. Introduction to JavaScript</h2>
+        
+        <!-- Purpose of JavaScript -->
+        <h3>Purpose of JavaScript</h3>
+        <p>
+          JavaScript is a powerful, client-side programming language that transforms static HTML pages into dynamic, interactive web experiences. Its primary purpose is to add interactivity to web pages—making them respond to user actions, update content dynamically, validate user inputs, and much more.
+        </p>
+        <h4>Adding Interactivity to Web Pages</h4>
+        <p>
+          For example, JavaScript can change the text or style of an element in response to a mouse click, animate a menu on hover, or validate form inputs immediately without sending data to a server.
+        </p>
+        
+        <!-- Example: Embedding JavaScript in HTML -->
+        <h3>Example: Embedding JavaScript in HTML</h3>
+        <p>
+          The simplest method to embed JavaScript is by including it directly between <code>&lt;script&gt;</code> tags within your HTML document. In this example, a button click triggers an alert, and additional JavaScript code runs once the page loads.
+        </p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+    &lt;head&gt;
+      &lt;meta charset="UTF-8"&gt;
+      &lt;title&gt;Embedded JavaScript Example&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+      &lt;p&gt;Click the button below to display an alert.&lt;/p&gt;
+      &lt;button onclick="alert('Hello from JavaScript!')"&gt;Click Me&lt;/button&gt;
+      
+      &lt;script&gt;
+        // This code runs when the page loads.
+        console.log("Page Loaded");
+      &lt;/script&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+  </code></pre>
+        
+        <!-- Basic Syntax -->
+        <h3>Basic Syntax</h3>
+        <p>
+          Understanding basic syntax is crucial for writing effective JavaScript code. Two important aspects include:
+        </p>
+        <h4>Case Sensitivity</h4>
+        <p>
+          JavaScript treats uppercase and lowercase letters differently. For example, <code>myVariable</code> and <code>myvariable</code> are considered two different identifiers. Consistent use of case is essential when naming variables, functions, and other identifiers.
+        </p>
+        <h4>Comments</h4>
+        <p>
+          Comments are notes or explanations within code that are not executed. They help in documenting and explaining code functionality.
+        </p>
+        <ul>
+          <li><strong>Single-line comments:</strong> Use <code>//</code> at the start.</li>
+          <li><strong>Multi-line comments:</strong> Enclose with <code>/*</code> and <code>*&#47;</code>.</li>
+        </ul>
+        <pre><code>
+  // This is a single-line comment
+  
+  /*
+    This is a multi-line comment
+    that spans multiple lines.
+  */
+  </code></pre>
+      </section>
+  
+      <!-- 2. Document Object Model (DOM) -->
+      <section id="dom">
+        <h2>2. Document Object Model (DOM)</h2>
+        
+        <!-- What Is the DOM? -->
+        <h3>What Is the DOM?</h3>
+        <p>
+          The DOM represents the document as a tree of nodes. Each node corresponds to a part of the document (elements, text, attributes, etc.) and can be manipulated using JavaScript. This enables dynamic updates and interaction with the content and structure of web pages.
+        </p>
+        
+        <!-- Manipulating the DOM -->
+        <h3>Manipulating the DOM</h3>
+        <p>
+          JavaScript methods allow you to select elements and update their content or styling dynamically. This section demonstrates the process.
+        </p>
+        <h4>Example: Updating Content and Style with DOM Methods</h4>
+        <p>
+          In this example, we select an element by its ID and change its text and style when a button is clicked.
+        </p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+    &lt;head&gt;
+      &lt;meta charset="UTF-8"&gt;
+      &lt;title&gt;DOM Manipulation Example&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h1 id="title"&gt;Original Title&lt;/h1&gt;
+      &lt;button id="changeBtn"&gt;Change Title&lt;/button&gt;
+      
+      &lt;script&gt;
+        // Select the elements.
+        const title = document.getElementById('title');
+        const button = document.getElementById('changeBtn');
+        
+        // Attach an event listener to update content and style.
+        button.addEventListener('click', function() {
+            title.textContent = "Title Updated via DOM Manipulation";
+            title.style.color = "#03A9F4";
+            title.style.fontSize = "2.5rem";
+        });
+      &lt;/script&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+  </code></pre>
+      </section>
+  
+      <!-- 3. Variables -->
+      <section id="variables">
+        <h2>3. Variables</h2>
+        
+        <!-- Storing Data -->
+        <h3>Storing Data</h3>
+        <p>
+          Variables are containers for storing data values in JavaScript. They allow you to keep, retrieve, and manipulate information such as strings, numbers, arrays, or even objects.
+        </p>
+        <pre><code>let greeting = "Hello, world!";
+  const pi = 3.14159;
+  var isAvailable = true;
+  </code></pre>
+        
+        <!-- Scope Differences -->
+        <h3>Scope Differences</h3>
+        <p>
+          The scope of a variable determines its visibility within different parts of your code.
+        </p>
+        
+        <h4>Local and Global Scope</h4>
+        <p>
+          <strong>Global variables</strong> are declared outside any function and can be accessed anywhere in your code. Conversely, <strong>local variables</strong> are declared within a function and exist only within that function’s block.
+        </p>
+        <pre><code>// Global variable
+  let globalVar = "I am available everywhere";
+  
+  function testScope() {
+    // Local variable
+    let localVar = "I am only available in this function";
+    console.log(globalVar); // Accessible here.
+    console.log(localVar);  // Accessible here.
+  }
+  
+  testScope();
+  console.log(globalVar); // Accessible globally.
+  // console.log(localVar); // This would throw a ReferenceError.
+  </code></pre>
+        
+        <h4>Block-level Scoping (let/const vs var)</h4>
+        <p>
+          Unlike <code>var</code>, which is function-scoped, <code>let</code> and <code>const</code> are block-scoped. They are accessible only within the nearest pair of curly braces.
+        </p>
+        <pre><code>function blockScopeExample() {
+    if (true) {
+      var varVariable = "Declared with var";
+      let letVariable = "Declared with let";
+      const constVariable = "Declared with const";
+      console.log(letVariable);  // "Declared with let"
+      console.log(constVariable); // "Declared with const"
+    }
+    console.log(varVariable);    // "Declared with var" (accessible throughout the function)
+    // console.log(letVariable); // Uncaught ReferenceError
+  }
+  
+  blockScopeExample();
+  </code></pre>
+        
+        <!-- Examples -->
+        <h3>Examples</h3>
+        <p>
+          Below is an example illustrating the difference between local and global variables as well as how the same function uses block-level scoping:
+        </p>
+        <pre><code>let globalCounter = 0;
+  
+  function incrementCounter() {
+    let localCounter = 0;
+    localCounter++;   // local counter is reset on every function call
+    globalCounter++;  // global counter maintains its value across function calls
+    console.log("Local:", localCounter, "Global:", globalCounter);
+  }
+  
+  incrementCounter(); // Local: 1, Global: 1
+  incrementCounter(); // Local: 1, Global: 2
+  </code></pre>
+      </section>
+  
+      <!-- 4. Regular Expressions -->
+      <section id="regex">
+        <h2>4. Regular Expressions</h2>
+        
+        <!-- Character Classes -->
+        <h3>Character Classes</h3>
+        <p>
+          Regular expressions (or regex) are patterns used for matching and manipulating strings. One of the core features is the ability to define character classes—sets or ranges of characters to match.
+        </p>
+        <h4>Simple and Predefined Classes</h4>
+        <p>
+          Some commonly used predefined character classes include:
+        </p>
+        <ul>
+          <li><code>\d</code>: Matches any digit (0-9)</li>
+          <li><code>\w</code>: Matches any alphanumeric character and underscore</li>
+          <li><code>\s</code>: Matches any whitespace (spaces, tabs, line breaks)</li>
+        </ul>
+        <pre><code>// Example: Matching one or more digits
+  const digitRegex = /\d+/;
+  console.log(digitRegex.test("12345")); // true
+  console.log(digitRegex.test("abc"));   // false
+  </code></pre>
+        
+        <!-- Quantifiers -->
+        <h3>Quantifiers</h3>
+        <p>
+          Quantifiers specify how many times a particular character or group should appear. The most common quantifiers are:
+        </p>
+        <h4>Asterisk, Plus, Question Mark</h4>
+        <ul>
+          <li><strong>Asterisk (<code>*</code>):</strong> Matches 0 or more occurrences.</li>
+          <li><strong>Plus (<code>+</code>):</strong> Matches 1 or more occurrences.</li>
+          <li><strong>Question Mark (<code>?</code>):</strong> Matches 0 or 1 occurrence.</li>
+        </ul>
+        <pre><code>// Asterisk: matches zero or more 'a's.
+  const asteriskRegex = /a*/;
+  // Plus: matches one or more 'a's.
+  const plusRegex = /a+/;
+  // Question mark: matches zero or one 'a'.
+  const questionRegex = /a?/;
+  
+  console.log(asteriskRegex.test(""));      // true (zero occurrences are allowed)
+  console.log(plusRegex.test("aaa"));         // true (one or more occurrences)
+  console.log(questionRegex.test("b"));       // true (matches zero occurrences)
+  </code></pre>
+        
+        <!-- Examples and Use Cases -->
+        <h3>Examples and Use Cases</h3>
+        <p>
+          Regex patterns are handy for various validations. For instance, here’s an example of validating an email address:
+        </p>
+        <pre><code>// Email validation regex example
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  console.log(emailRegex.test("user@example.com"));  // true
+  console.log(emailRegex.test("invalid-email"));     // false
+  </code></pre>
+      </section>
+
+      <!-- ==========================================================
+         5. Arrays
+         ========================================================== -->
+    <section id="arrays">
+        <h2>5. Arrays</h2>
+        
+        <!-- Definition -->
+        <h3>Definition</h3>
+        <p>
+          In JavaScript, an <strong>array</strong> is an ordered list of values. Arrays can store elements of any type (numbers, strings, objects, etc.) and are zero-indexed—meaning the first element is at index 0. They are foundational for managing collections of data.
+        </p>
+        <pre><code>
+  // Creating an array using literal notation
+  const fruits = ["Apple", "Banana", "Cherry"];
+  console.log(fruits[0]);  // Output: "Apple"
+        </code></pre>
+        
+        <!-- Basic Array Operations -->
+        <h3>Basic Array Operations</h3>
+        
+        <!-- Adding, Removing, Accessing Elements -->
+        <h4>Adding, Removing, and Accessing Elements</h4>
+        <p>
+          JavaScript arrays offer a range of built-in methods to manipulate data:
+        </p>
+        <ul>
+          <li><strong>push()</strong>: Adds an element to the end of the array.</li>
+          <li><strong>pop()</strong>: Removes the last element from the array.</li>
+          <li><strong>unshift()</strong>: Adds an element at the beginning of the array.</li>
+          <li><strong>shift()</strong>: Removes the first element from the array.</li>
+        </ul>
+        <pre><code>
+  // Example of Adding, Removing, and Accessing Array Elements:
+  let numbers = [10, 20, 30];
+  
+  // Adding elements
+  numbers.push(40);       // numbers becomes [10, 20, 30, 40]
+  numbers.unshift(5);     // numbers becomes [5, 10, 20, 30, 40]
+  
+  // Removing elements
+  numbers.pop();          // removes the last element; numbers becomes [5, 10, 20, 30]
+  numbers.shift();        // removes the first element; numbers becomes [10, 20, 30]
+  
+  // Accessing an element by its index
+  console.log("Element at index 1:", numbers[1]);  // Output: 20
+        </code></pre>
+        
+        <!-- Iterating through Arrays -->
+        <h4>Iterating through Arrays</h4>
+        <p>
+          Iterating over arrays lets you process or manipulate each element. Use a conventional for loop, for...of loop, or the forEach method.
+        </p>
+        <pre><code>
+  // Using a traditional for loop:
+  for (let i = 0; i < numbers.length; i++) {
+    console.log("For Loop - Index " + i + ": " + numbers[i]);
+  }
+  
+  // Using for...of loop:
+  for (let number of numbers) {
+    console.log("For...of Loop - Number: " + number);
+  }
+  
+  // Using Array forEach method:
+  numbers.forEach((num, index) => {
+    console.log(`forEach - Index ${index}: ${num}`);
+  });
+        </code></pre>
+        
+        <!-- Examples -->
+        <h3>Examples</h3>
+        <p>
+          Below is a complete example that demonstrates managing a list of tasks using arrays:
+        </p>
+        <pre><code>
+  // Example: Task List Management
+  let tasks = ["Learn JavaScript", "Practice Coding", "Review Algorithms"];
+  
+  // Adding a new task:
+  tasks.push("Write Documentation");
+  
+  // Removing the first task:
+  tasks.shift();
+  
+  // Iterating over the remaining tasks:
+  tasks.forEach((task, idx) => {
+    console.log("Task " + (idx + 1) + ": " + task);
+  });
+        </code></pre>
+      </section>
+  
+      <!-- ==========================================================
+           6. Selection
+           ========================================================== -->
+      <section id="selection">
+        <h2>6. Selection</h2>
+        
+        <!-- If Statements -->
+        <h3>If Statements</h3>
+        <p>
+          Selection statements allow your code to execute different blocks based on conditions. The <code>if</code> statement checks a condition and optionally follows with <code>else if</code> and <code>else</code> clauses for additional decision-making paths.
+        </p>
+        <h4>Single Condition, Else If, Else</h4>
+        <p>
+          The example below demonstrates scoring logic using multiple conditions:
+        </p>
+        <pre><code>
+  // Example: Grading System
+  let score = 76;
+  
+  if (score >= 90) {
+    console.log("Grade: A");
+  } else if (score >= 80) {
+    console.log("Grade: B");
+  } else if (score >= 70) {
+    console.log("Grade: C");
+  } else {
+    console.log("Grade: F");
+  }
+        </code></pre>
+        
+        <!-- Switch Statement -->
+        <h3>Switch Statement</h3>
+        <p>
+          The <code>switch</code> statement simplifies handling multiple conditions of the same variable. It compares the value to different cases and executes the matching block, using <code>break</code> to prevent fall-through.
+        </p>
+        <pre><code>
+  // Example: Day Message
+  let day = "Friday";
+  
+  switch(day) {
+    case "Monday":
+      console.log("Starts the week with energy!");
+      break;
+    case "Friday":
+      console.log("Time to relax—it's Friday!");
+      break;
+    case "Saturday":
+    case "Sunday":
+      console.log("Enjoy your weekend!");
+      break;
+    default:
+      console.log("Have a great day!");
+  }
+        </code></pre>
+      </section>
+  
+      <!-- ==========================================================
+           7. Loops
+           ========================================================== -->
+      <section id="loops">
+        <h2>7. Loops</h2>
+        <p>Loops allow you to execute a block of code repeatedly as long as (or until) a specified condition is met.</p>
+        
+        <!-- For Loop -->
+        <h3>For Loop</h3>
+        <p>
+          The <code>for</code> loop is useful when the number of iterations is known. It consists of an initialization, a condition, and an increment/decrement expression.
+        </p>
+        <pre><code>
+  // For Loop: Print numbers 1 to 5
+  for (let i = 1; i <= 5; i++) {
+    console.log("For Loop Iteration:", i);
+  }
+        </code></pre>
+  
+        <!-- While Loop -->
+        <h3>While Loop</h3>
+        <p>
+          A <code>while</code> loop repeatedly executes a block of code as long as the provided condition evaluates to true.
+        </p>
+        <pre><code>
+  let counter = 0;
+  while (counter < 3) {
+    console.log("While Loop Count:", counter);
+    counter++;
+  }
+        </code></pre>
+  
+        <!-- Do...While Loop -->
+        <h3>Do...While Loop</h3>
+        <p>
+          The <code>do...while</code> loop guarantees that the code block runs at least once before evaluating the loop's condition.
+        </p>
+        <pre><code>
+  let num = 3;
+  do {
+    console.log("Do...While Loop Number:", num);
+    num--;
+  } while (num > 0);
+        </code></pre>
+  
+        <!-- ForEach Loop -->
+        <h3>ForEach Loop</h3>
+        <p>
+          The <code>forEach()</code> method is specifically designed for arrays. It invokes a provided function once for every array element.
+        </p>
+        <pre><code>
+  const numbers = [10, 20, 30, 40, 50];
+  numbers.forEach((number, index) => {
+    console.log(`Element at index ${index}: ${number}`);
+  });
+        </code></pre>
+      </section>
+  
+      <!-- ==========================================================
+           8. Logical Operators
+           ========================================================== -->
+      <section id="logical-operators">
+        <h2>8. Logical Operators</h2>
+        <p>
+          Logical operators combine and modify Boolean values, making them essential for managing multiple conditions. The primary logical operators in JavaScript are:
+        </p>
+        
+        <h3>AND (&&), OR (||), NOT (!)</h3>
+        <ul>
+          <li><strong>AND (&&):</strong> Returns true only if both operands are true.</li>
+          <li><strong>OR (||):</strong> Returns true if at least one operand is true.</li>
+          <li><strong>NOT (!):</strong> Inverts the Boolean value of an operand.</li>
+        </ul>
+        <pre><code>
+  // Demonstration of Logical Operators:
+  
+  // Logical AND:
+  console.log(true && false);  // Output: false
+  
+  // Logical OR:
+  console.log(true || false);  // Output: true
+  
+  // Logical NOT:
+  console.log(!true);          // Output: false
+        </code></pre>
+        
+        <h3>Example Use Cases</h3>
+        <p>
+          Logical operators are extremely useful in controlling access or flow based on multiple conditions. Consider a scenario where access is granted only if a user is logged in and holds a premium status:
+        </p>
+        <pre><code>
+  let isLoggedIn = true;
+  let isPremiumUser = false;
+  
+  if (isLoggedIn && isPremiumUser) {
+    console.log("Access granted to premium features.");
+  } else {
+    console.log("Access denied. Please upgrade to premium.");
+  }
+        </code></pre>
+      </section>
+      <!-- ==========================================================
+         9. Functions
+         ========================================================== -->
+    <section id="functions">
+        <h2>9. Functions</h2>
+        
+        <!-- Function Declaration -->
+        <h3>Function Declaration</h3>
+        <p>
+          A <strong>function declaration</strong> defines a named function that can be reused throughout the code. Such functions are hoisted, meaning they can be called before they are defined. When declaring a function, you define its <em>parameters</em> (input values) and optionally a <em>return value</em>. The return value is sent back to the caller and can be used for further operations.
+        </p>
+        <h4>Parameters and Return Values</h4>
+        <p>
+          Parameters act as placeholders for the arguments you pass into the function. The <code>return</code> statement outputs a value. In the following example, the function <code>greet</code> takes a name as a parameter and returns a greeting message.
+        </p>
+        <pre><code>
+  // Function Declaration Example
+  
+  function greet(name) {
+    // 'name' is the parameter which will hold the passed value.
+    // The function returns a greeting string using the parameter.
+    return "Hello, " + name + "!";
+  }
+  
+  // Calling the function with an argument.
+  console.log(greet("Alice"));  // Output: Hello, Alice!
+        </code></pre>
+  
+        <!-- Function Expressions -->
+        <h3>Function Expressions</h3>
+        <p>
+          A <strong>function expression</strong> is when a function is assigned to a variable. Unlike function declarations, function expressions are not hoisted. They can be anonymous or named, and they allow flexible usage such as passing functions as arguments or returning them from other functions.
+        </p>
+        <pre><code>
+  // Function Expression Example
+  
+  const add = function(a, b) {
+    return a + b;
+  };
+  
+  // Calling the function expression.
+  console.log("Addition:", add(3, 4));  // Output: Addition: 7
+  
+  // Using an arrow function (a concise syntax for function expressions)
+  const multiply = (x, y) => x * y;
+  console.log("Multiplication:", multiply(5, 6));  // Output: Multiplication: 30
+        </code></pre>
+  
+        <!-- Examples -->
+        <h3>Examples</h3>
+        <p>
+          Let’s look at a more advanced example where we define a few functions to perform calculations and log messages:
+        </p>
+        <pre><code>
+  // Advanced Example: Calculator Functions
+  
+  // Function Declaration for subtraction
+  function subtract(a, b) {
+    return a - b;
+  }
+  
+  // Function Expression for division
+  const divide = function(a, b) {
+    if (b === 0) {
+      return "Cannot divide by zero!";
+    }
+    return a / b;
+  };
+  
+  // Arrow function for modulus
+  const modulus = (a, b) => a % b;
+  
+  // Using the functions
+  console.log("Subtraction:", subtract(10, 4));  // Output: 6
+  console.log("Division:", divide(20, 5));         // Output: 4
+  console.log("Modulus:", modulus(17, 5));         // Output: 2
+        </code></pre>
+      </section>
+  
+      <!-- ==========================================================
+           10. JavaScript Events
+           ========================================================== -->
+      <section id="events">
+        <h2>10. JavaScript Events</h2>
+        
+        <!-- Event Listeners -->
+        <h3>Event Listeners</h3>
+        <p>
+          JavaScript events allow your web page to respond to user interactions. The most efficient way to handle events is by using <code>addEventListener()</code>, which attaches a callback function to specified events. In the example below, clicking a button triggers a content change.
+        </p>
+        <h4>addEventListener() and Event Handling</h4>
+        <p>
+          The <code>addEventListener()</code> method listens for a specific event type (like 'click') on an element and executes a designated function when that event occurs.
+        </p>
+        <pre><code>
+  // Example: Changing content upon button click
+  
+  // This function changes the text of the paragraph
+  function updateMessage() {
+    const messagePara = document.getElementById("message");
+    messagePara.textContent = "The content has been updated via event handling!";
+  }
+  
+  // Attach the event listener to the button with the ID 'changeButton'
+  document.getElementById("changeButton").addEventListener("click", updateMessage);
+        </code></pre>
+        
+        <!-- Example: Clicking a Button to Change Content -->
+        <h4>Example: Clicking a Button to Change Content</h4>
+        <p>
+          The HTML fragment below shows a button and a paragraph whose content updates when the button is clicked:
+        </p>
+        <pre><code>
+  &lt;button id="changeButton"&gt;Click Me&lt;/button&gt;
+  &lt;p id="message"&gt;This is the original text.&lt;/p&gt;
+        </code></pre>
+        
+        <!-- Common Event Types -->
+        <h3>Common Event Types</h3>
+        <p>
+          JavaScript supports many event types. Here are a few common ones:
+        </p>
+        <ul>
+          <li><strong>Mouse Events:</strong> click, dblclick, mouseover, mouseout, mousedown, mouseup</li>
+          <li><strong>Keyboard Events:</strong> keydown, keyup, keypress</li>
+          <li><strong>Input Events:</strong> change, input, submit, focus, blur</li>
+        </ul>
+        <p>
+          For instance, you can listen for keyboard events on an input field to perform real-time validation or adjustments.
+        </p>
+        <pre><code>
+  // Example: Logging keystrokes from an input field
+  document.getElementById("inputField").addEventListener("keyup", function(event) {
+    console.log("Key pressed:", event.key);
+  });
+        </code></pre>
+        <p>
+          Here, "inputField" would be the ID for an HTML input element.
+        </p>
+      </section>
+      
+      <!-- ==========================================================
+           11. Combining HTML, CSS, and JavaScript
+           ========================================================== -->
+      <section id="combining">
+        <h2>11. Combining HTML, CSS, and JavaScript</h2>
+        <p>
+          You can integrate HTML, CSS, and JavaScript to achieve dynamic and interactive web pages. By combining these technologies, you can update content on the fly while applying new styles in response to user actions.
+        </p>
+        
+        <h3>Example: Dynamic Content Update with JavaScript</h3>
+        <p>
+          This example demonstrates how to change HTML content and apply CSS dynamically by clicking a button.
+        </p>
+        <h4>Changing HTML Content</h4>
+        <pre><code>
+  &lt;div id="dynamicContent"&gt;
+    &lt;p id="dynamicText"&gt;Original content goes here.&lt;/p&gt;
+  &lt;/div&gt;
+        </code></pre>
+        <h4>Applying CSS Dynamically</h4>
+        <pre><code>
+  // JavaScript to update HTML and apply CSS styles
+  document.getElementById("updateContentBtn").addEventListener("click", function() {
+    // Changing innerHTML content
+    document.getElementById("dynamicText").innerHTML = "Content updated dynamically!";
+    
+    // Applying CSS dynamically using the style property
+    const contentDiv = document.getElementById("dynamicContent");
+    contentDiv.style.backgroundColor = "#222";
+    contentDiv.style.border = "2px solid #03A9F4";
+    contentDiv.style.padding = "1rem";
+  });
+        </code></pre>
+        <p>
+          And here’s the corresponding HTML for the button:
+        </p>
+        <pre><code>
+  &lt;button id="updateContentBtn"&gt;Update Content&lt;/button&gt;
+        </code></pre>
+      </section>
+  
+      <!-- ==========================================================
+           12. Filter and Sort Lists
+           ========================================================== -->
+      <section id="filter-sort">
+        <h2>12. Filter and Sort Lists</h2>
+        <p>
+          Working with arrays often involves filtering and sorting data. Filtering creates a new array containing only elements that meet certain criteria, while sorting rearranges the array elements.
+        </p>
+        
+        <h3>Example: Filtering an Array</h3>
+        <p>
+          The example below uses the <code>filter()</code> method to extract even numbers from an array:
+        </p>
+        <pre><code>
+  // Filtering even numbers from an array
+  const rawNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const evenNumbers = rawNumbers.filter(number => number % 2 === 0);
+  console.log("Even Numbers:", evenNumbers);  // Output: [2, 4, 6, 8, 10]
+        </code></pre>
+  
+        <h3>Sorting Arrays</h3>
+        <p>
+          The following example demonstrates how to sort an array of numbers in ascending order using the <code>sort()</code> method and a comparison function.
+        </p>
+        <pre><code>
+  // Sorting array of numbers in ascending order
+  const unsorted = [40, 10, 30, 20, 50];
+  const sortedNumbers = unsorted.sort((a, b) => a - b);
+  console.log("Sorted Array:", sortedNumbers);  // Output: [10, 20, 30, 40, 50]
+        </code></pre>
+      </section>
+  
+      <!-- ==========================================================
+           13. Advanced JavaScript Concepts
+           ========================================================== -->
+      <section id="advanced">
+        <h2>13. Advanced JavaScript Concepts</h2>
+        <p>
+          As you progress with JavaScript, understanding and utilizing objects becomes essential. Objects allow you to group related data and functionalities together using key-value pairs.
+        </p>
+        
+        <h3>JavaScript Objects</h3>
+        <p>
+          An object is a collection of properties, where each property is defined as a key-value pair. Objects can also include methods—functions that operate on the object's data. Below is an example of an object representing a person.
+        </p>
+        <pre><code>
+  // Defining an object using object literal syntax
+  const person = {
+    firstName: "Jane",
+    lastName: "Doe",
+    age: 28,
+    // Method to return the full name
+    getFullName: function() {
+      return this.firstName + " " + this.lastName;
+    },
+    // Nested object representing contact details
+    contact: {
+      email: "jane.doe@example.com",
+      phone: "123-456-7890"
+    }
+  };
+  
+  console.log("Full Name:", person.getFullName());   // Output: Jane Doe
+  console.log("Email:", person.contact.email);         // Output: jane.doe@example.com
+        </code></pre>
+      </section>
+      <!-- ==========================================================
+         Event Delegation
+         ========================================================== -->
+    <section id="event-delegation">
+        <h2>Event Delegation</h2>
+        <p>
+          <strong>Event delegation</strong> is a technique where a single event listener is added to a parent element and is used to handle events from its child elements. This method is especially valuable when you have many child elements or when child elements are dynamically added or removed.
+        </p>
+        <p>
+          <strong>Why it’s important for performance:</strong>  
+          Instead of attaching individual event listeners to each child element—which can consume significant memory and reduce performance—attaching just one listener to the parent minimizes overhead. This also simplifies code maintenance, particularly in dynamic applications.
+        </p>
+        <pre><code>
+  // HTML structure for event delegation:
+  /*
+    <ul id="itemList">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  */
+  
+  // JavaScript: Attach a single click listener to the parent <ul>
+  document.getElementById("itemList").addEventListener("click", function(event) {
+    // Check if the event target is a list item.
+    if (event.target && event.target.nodeName === "LI") {
+      console.log("You clicked:", event.target.textContent);
+    }
+  });
+        </code></pre>
+        <p>
+          In this example, clicking any <code>&lt;li&gt;</code> element logs its text content. This single listener easily handles events even if more list items are added later.
+        </p>
+      </section>
+  
+      <!-- ==========================================================
+           Adding and Removing Event Listeners
+           ========================================================== -->
+      <section id="add-remove-listeners">
+        <h2>Adding and Removing Event Listeners</h2>
+        <p>
+          Managing event listeners effectively is crucial for both performance and clean code. You attach listeners using <code>addEventListener()</code> and can remove them when they are no longer needed using <code>removeEventListener()</code>. This helps prevent memory leaks and unwanted event triggers.
+        </p>
+        <pre><code>
+  // Example: Adding a listener that removes itself after one click.
+  function handleClick() {
+    console.log("Button clicked — this listener will now be removed.");
+    // Remove the event listener after it runs once
+    document.getElementById("actionButton").removeEventListener("click", handleClick);
+  }
+  
+  document.getElementById("actionButton").addEventListener("click", handleClick);
+  
+  /* HTML:
+     <button id="actionButton">Click Me Once</button>
+  */
+        </code></pre>
+        <p>
+          In this example, clicking the button triggers the <code>handleClick</code> function and then immediately removes the listener, ensuring that the click action happens only once.
+        </p>
+      </section>
+  
+      <!-- ==========================================================
+           DOM Manipulation
+           ========================================================== -->
+      <section id="dom-manipulation">
+        <h2>DOM Manipulation</h2>
+        <p>
+          DOM manipulation lets you update the content, structure, and styles of your web page on the fly. JavaScript provides several properties for this purpose:
+        </p>
+        <ul>
+          <li><strong>.innerHTML</strong>: Allows you to get or set the HTML content of an element. Use it when you need to inject HTML markup.</li>
+          <li><strong>.textContent</strong>: Used for getting or setting the text content of an element without parsing it as HTML. It is safer when handling plain text.</li>
+          <li><strong>.style</strong>: Provides direct access to an element's inline styles so you can modify its appearance dynamically.</li>
+        </ul>
+  
+        <h3>.innerHTML</h3>
+        <p>
+          Use <code>innerHTML</code> when you want to change an element's content along with HTML formatting.
+        </p>
+        <pre><code>
+  // Changing content using innerHTML:
+  document.getElementById("demo").innerHTML = "<strong>New HTML Content</strong>";
+        </code></pre>
+        
+        <h3>.textContent</h3>
+        <p>
+          Use <code>textContent</code> when you need to update the element's text content safely without interpreting HTML tags.
+        </p>
+        <pre><code>
+  // Updating content using textContent:
+  document.getElementById("demo").textContent = "This is the new plain text.";
+        </code></pre>
+        
+        <h3>.style</h3>
+        <p>
+          The <code>style</code> property lets you modify an element's CSS on the fly, making it possible to introduce dynamic visual changes.
+        </p>
+        <pre><code>
+  // Dynamically changing styles with .style:
+  const demoElem = document.getElementById("demo");
+  demoElem.style.backgroundColor = "#222";
+  demoElem.style.color = "#03A9F4";
+  demoElem.style.padding = "1rem";
+        </code></pre>
+        
+        <p>
+          Below is an example that combines all three methods:
+        </p>
+        <pre><code>
+  /*
+  HTML Structure:
+    <div id="demo">Initial Content</div>
+    <button id="updateDemoBtn">Update Demo</button>
+  */
+  
+  // JavaScript to dynamically update content and style:
+  document.getElementById("updateDemoBtn").addEventListener("click", function() {
+    // Update content as HTML
+    document.getElementById("demo").innerHTML = "<em>Updated with innerHTML</em>";
+    
+    // After 2 seconds, replace it with safe plain text
+    setTimeout(function() {
+      document.getElementById("demo").textContent = "Now updated with textContent.";
+    }, 2000);
+    
+    // Immediately apply new CSS styles
+    const demo = document.getElementById("demo");
+    demo.style.border = "2px solid #03A9F4";
+    demo.style.backgroundColor = "#333";
+  });
+        </code></pre>
+        <p>
+          This complete example shows how clicking the "Update Demo" button will update the text and style of the <code>div</code> with the ID "demo" using different DOM manipulation techniques.
+        </p>
+      </section>
+
+
+    <p id="goback"><a href="../../index.html">Go Back?</a></p>
+   
+
+    <footer>
+        <p>&copy; 2025 Semantic HTML Tutorial</p>
+        <p><a href="../../index.html">Go Back?</a></p>
+    </footer>
+    
+
+</main>
+    <script src="script.js"></script>
+    <script>
+      // Helper: Check if an element's center is within the threshold of the viewport center.
+      function isElementNearCenter(elem, threshold = 50) {
+        const rect = elem.getBoundingClientRect();
+        const elemCenter = rect.top + rect.height / 2;
+        const viewportCenter = window.innerHeight / 2;
+        return Math.abs(elemCenter - viewportCenter) < threshold;
+      }
+      
+      // Update which elements should be "lifted" based on their position relative to the viewport center.
+      function updateCenterLift() {
+        document.querySelectorAll("code").forEach(elem => {
+          if (isElementNearCenter(elem)) {
+            elem.classList.add('lifted');
+          } else {
+            elem.classList.remove('lifted');
+          }
+        });
+      }
+      
+      // Listen to scroll and resize events, then update the lifted state.
+      window.addEventListener("scroll", updateCenterLift);
+      window.addEventListener("resize", updateCenterLift);
+      
+      // Initial check on page load.
+      updateCenterLift();
+    </script>
+</body>
+</html>

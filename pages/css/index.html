@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Metadata and styling for an in-depth HTML tutorial on the functionality of HTML.
+    This head section includes character encoding, a responsive viewport setting,
+    an external font from Google Fonts, and internal CSS that follows your provided
+    reference color guide. The CSS also defines styles for code examples and diagram placeholders.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-funky.min.css" rel="stylesheet">
+  <title>Detailed CSS Tutorial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" type="text/css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <link rel="icon" href="../../assets/images/CSS.png" type="image/png">
+ 
+</head>
+<body>
+  <header>
+    <h1>Detailed CSS Tutorial</h1>
+    <p>Understanding the Functionality of HTML: A deep dive into HTML structure, components, and best practices.</p>
+    <div class="progress-bar-container" id="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+  </header>
+  
+  <main>
+    <section id="understanding-css">
+        <h2>1. Understanding the Functionality of CSS</h2>
+        
+        <!-- 1.1 Purpose of CSS -->
+        <section id="purpose-of-css">
+          <h3>1.1 Purpose of CSS</h3>
+          <p>
+            CSS stands for <strong>Cascading Style Sheets</strong> and is the language used to describe the presentation of a document written in HTML or XML.
+            Its primary function is to separate content from design. This means that developers write simple HTML to describe the content and use CSS
+            to dictate how that content should appear on the page.
+          </p>
+          <p><strong>The key purposes of CSS include:</strong></p>
+          <ul>
+            <li>
+              <strong>Formatting and Layout:</strong>
+              <p>
+                CSS provides a wide range of properties that allow you to control the structure and visual presentation of your content. This includes
+                setting fonts, colors, spacing, and positioning of elements. Modern layout techniques such as Flexbox and CSS Grid let you design complex,
+                responsive layouts without relying on table-based designs.
+              </p>
+            </li>
+            <li>
+              <strong>Separation of Concerns:</strong>
+              <p>
+                Instead of merging content with presentation, CSS allows you to keep your HTML clean and semantic by removing style-related code.
+                This separation makes both the HTML and CSS easier to read, maintain, and update. It also encourages reusability, as the same stylesheet
+                can be applied across multiple pages.
+              </p>
+            </li>
+            <li>
+              <strong>Enhanced Maintainability:</strong>
+              <p>
+                Because styling is centralized in one or more CSS files, making global changes becomes much easier. Instead of updating inline styles in
+                several different HTML files, you can change the stylesheet to instantly update the presentation across your entire website. This efficiency
+                is especially beneficial in large projects.
+              </p>
+            </li>
+          </ul>
+        </section>
+  
+        <!-- 1.2 Example: Styling Text and Layout -->
+        <section id="example-styling-text-layout">
+          <h3>1.2 Example: Styling Text and Layout</h3>
+          <p>
+            Below is an example demonstrating how CSS can be used to style text elements and create a basic layout using a flexible container and boxes.
+            This example shows how you can set fonts, colors, and layout properties to achieve a clean and modern design.
+          </p>
+          <pre>
+  <code class="language-css">
+  /* Example CSS for Styling Text and Layout */
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .box {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 30%;
+    margin-bottom: 20px;
+  }
+  </code>
+          </pre>
+          <p>
+            In the above CSS:
+            <br><strong>body</strong> sets a global font, background color, and resets default margins.
+            <br><strong>h1</strong> centers the heading and applies a dark color.
+            <br><strong>.container</strong> uses Flexbox to arrange child elements responsively.
+            <br><strong>.box</strong> styles individual content boxes with padding, a border, and a defined width.
+          </p>
+        </section>
+  
+        <!-- 1.3 Referencing CSS in HTML -->
+        <section id="referencing-css">
+          <h3>1.3 Referencing CSS in HTML</h3>
+          <p>There are three main methods to reference CSS in an HTML document. Each method has its own use cases and advantages:</p>
+          <ol>
+            <li>
+              <strong>Inline Styles</strong>
+              <p>
+                Inline styles are written directly into an HTML element’s <code class="language-css">style</code> attribute. This method is useful for quick, one-off changes.
+                However, it is not recommended for extensive styling because it mixes content with presentation and reduces maintainability.
+              </p>
+              <pre>
+  <code class="language-css">
+  <!-- Example of Inline Styles -->
+  <p style="color: blue; font-size: 16px;">
+    This paragraph is styled directly with inline CSS.
+  </p>
+  </code>
+              </pre>
+            </li>
+            <li>
+              <strong>Internal Style Sheets</strong>
+              <p>
+                An internal style sheet is defined within a <code class="language-css">&lt;style&gt;</code> tag in the <code class="language-css">&lt;head&gt;</code> section of your HTML
+                document. This approach is ideal for styling a single HTML document or when you want to include styles that are unique to that page.
+              </p>
+              
+  
+        <!-- 1.4 CSS Syntax -->
+        <section id="css-syntax">
+          <h3>1.4 CSS Syntax</h3>
+          <p>
+            CSS follows a straightforward syntax where each rule-set consists of a selector and a declaration block:
+          </p>
+        mc   <ul>
+            <li>
+              <strong>Selectors:</strong>
+              <p>
+                Selectors tell the browser which HTML elements the styles should be applied to. They can be as simple as targeting a single element (e.g.,
+                <code class="language-css">p</code> for paragraphs) or more complex (e.g., <code class="language-css">ul li</code> for list items within a list, <code class="language-css">.class</code> for elements with a specific class,
+                or <code class="language-css">#id</code> for a specific element with an id).
+              </p>
+            </li>
+            <li>
+              <strong>Declarations:</strong>
+              <p>
+                Declarations are the instructions that apply styles to the selected elements. Each declaration comprises a CSS property and its corresponding value,
+                such as <code class="language-css">color: red;</code>. Multiple declarations can be grouped within a declaration block enclosed by curly braces.
+              </p>
+            </li>
+          </ul>
+          <p>
+            Consider the following example that illustrates selectors and declarations:
+          </p>
+          <pre>
+  <code class="language-css">
+  /* Examples of basic CSS syntax */
+  
+  /* Element Selector */
+  p {
+    color: red;
+    font-size: 16px;
+  }
+  
+  /* Class Selector */
+  .highlight {
+    background-color: yellow;
+  }
+  
+  /* ID Selector */
+  #unique {
+    margin-top: 20px;
+  }
+  
+  /* Combined Selector: Targeting only paragraphs with the "highlight" class */
+  p.highlight {
+    font-weight: bold;
+  }
+  </code>
+          </pre>
+          <p>
+            In this example, the <strong>p</strong> selector targets all paragraphs, while <strong>.highlight</strong> and <strong>#unique</strong> target elements by their class
+            and id respectively. The last rule, <code class="language-css">p.highlight</code>, applies styles only to those paragraphs that have the class "highlight."
+          </p>
+        </section>
+      </section>
+
+      <!-- 2. CSS Selectors -->
+    <section id="css-selectors">
+        <h2>2. CSS Selectors</h2>
+        
+        <!-- Basic Selectors -->
+        <section id="basic-selectors">
+          <h3>• Basic Selectors</h3>
+          
+          <!-- Type Selectors -->
+          <section id="type-selectors">
+            <h4>o Type Selectors</h4>
+            <p>
+              Type selectors target elements by their tag name. For example, using <code class="language-css">p</code> targets all paragraph elements.
+              These selectors are the most basic and are extremely useful for setting global styles to elements defined in HTML.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* This rule applies to all paragraph elements */
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+            </code></pre>
+            <p>
+              In this snippet, every &lt;p&gt; element in the document is styled consistently. No matter where the paragraphs appear in your HTML,
+              they will inherit these properties. This is especially useful when you have a uniform design requirement.
+            </p>
+          </section>
+          
+          <!-- Class Selectors -->
+          <section id="class-selectors">
+            <h4>o Class Selectors</h4>
+            <p>
+              Class selectors are used to target elements with a specific class attribute. They begin with a dot (<code class="language-css">.</code>) followed by the class name.
+              This method allows you to apply particular styles to groups of elements even if they are of different types.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* This rule applies to elements with class "highlight" */
+  .highlight {
+    background-color: #fffbcc;
+    padding: 10px;
+    border-radius: 4px;
+  }
+            </code></pre>
+            <p>
+              Here, any element with the class <code class="language-css">highlight</code> will receive the specified background, padding, and border radius styling.
+              It is a powerful tool for emphasizing content.
+            </p>
+          </section>
+          
+          <!-- ID Selectors -->
+          <section id="id-selectors">
+            <h4>o ID Selectors</h4>
+            <p>
+              ID selectors target a single unique element by its id attribute. They start with a hash (<code class="language-css">#</code>) followed by the id name.
+              Unlike classes, IDs are intended to be unique within the HTML document.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* This rule applies to the element with the id "main-header" */
+  #main-header {
+    font-size: 2em;
+    color: #005b96;
+    margin-bottom: 20px;
+  }
+            </code></pre>
+            <p>
+              Because IDs are unique, they have a higher specificity than type or class selectors, meaning their rules will generally override others.
+              Use ID selectors when you need to target a single, unique element on your page.
+            </p>
+          </section>
+          
+          <!-- Universal Selector -->
+          <section id="universal-selector">
+            <h4>o Universal Selector</h4>
+            <p>
+              The universal selector is represented by an asterisk (<code class="language-css">*</code>) and selects every element in the document.
+              It is incredibly powerful, but must be used with caution to avoid performance issues and unintended styling.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* Resets margin and padding for every element */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+            </code></pre>
+            <p>
+              This example is common in CSS resets, ensuring that every element starts without default browser styles,
+              which helps create a consistent baseline across different browsers.
+            </p>
+          </section>
+          
+          <!-- Attribute Selectors -->
+          <section id="attribute-selectors">
+            <h4>o Attribute Selectors</h4>
+            <p>
+              Attribute selectors target elements based on the presence or value of an attribute. This can be used for advanced selection
+              when you need to style elements with a specified attribute or attribute value.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* Style all input elements with type="text" */
+  input[type="text"] {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  
+  /* Style any element with a title attribute */
+  [title] {
+    text-decoration: underline;
+  }
+            </code></pre>
+            <p>
+              The first example specifically targets text inputs, while the second applies to any element that contains the <code class="language-css">title</code> attribute.
+              Attribute selectors provide an additional way to precisely target elements beyond their tag, class, or id.
+            </p>
+          </section>
+        </section>
+        
+        <!-- Combining Selectors -->
+        <section id="combining-selectors">
+          <h3>• Combining Selectors</h3>
+          <p>
+            Combining selectors allows you to apply multiple conditions to target elements more precisely.
+            This enhances the reusability and efficiency of your style sheet.
+          </p>
+          
+          <!-- Combinator Types -->
+          <section id="combinator-types">
+            <h4>o Combinator Types</h4>
+            
+            <!-- Child Combinator -->
+            <section id="child-combinator">
+              <h5>Child Combinator</h5>
+              <p>
+                The child combinator is represented by the <code class="language-css">></code> symbol and is used to target direct children of a specified element.
+                This means that only elements that are immediate children of the parent will be selected.
+              </p>
+              <p>Example:</p>
+              <pre><code class="language-css">
+  /* Select only direct <li> children of <ul> */
+  ul > li {
+    color: #007acc;
+    padding: 5px 0;
+  }
+              </code></pre>
+              <p>
+                In this example, only list items that are a direct child of a <code class="language-css">&lt;ul&gt;</code> are affected. Deeper nested <code class="language-css">&lt;li&gt;</code> elements will not inherit this style.
+              </p>
+            </section>
+            
+            <!-- Descendant Combinator -->
+            <section id="descendant-combinator">
+              <h5>Descendant Combinator</h5>
+              <p>
+                The descendant combinator is a single space. It selects all elements that are descendants (at any level) of a specified element.
+              </p>
+              <p>Example:</p>
+              <pre><code class="language-css">
+  /* Select all <span> elements within any <div> */
+  div span {
+    background-color: #e0f7fa;
+    padding: 2px 4px;
+  }
+              </code></pre>
+              <p>
+                Unlike the child combinator, this rule will apply to <code class="language-css">&lt;span&gt;</code> elements nested at any level inside a <code class="language-css">&lt;div&gt;</code>.
+              </p>
+            </section>
+            
+            <!-- Adjacent Sibling Combinator -->
+            <section id="adjacent-sibling-combinator">
+              <h5>Adjacent Sibling Combinator</h5>
+              <p>
+                The adjacent sibling combinator is represented by the plus sign (<code class="language-css">+</code>). It selects an element that is directly adjacent to another element.
+              </p>
+              <p>Example:</p>
+              <pre><code class="language-css">
+  /* Select the paragraph that immediately follows an <h3> */
+  h3 + p {
+    font-style: italic;
+    margin-top: 0;
+  }
+              </code></pre>
+              <p>
+                In this example, only the paragraph immediately following an <code class="language-css">&lt;h3&gt;</code> will be styled in italic.
+              </p>
+            </section>
+            
+            <!-- General Sibling Combinator -->
+            <section id="general-sibling-combinator">
+              <h5>General Sibling Combinator</h5>
+              <p>
+                The general sibling combinator is represented by the tilde (<code class="language-css">~</code>) and selects all siblings that follow the specified element, regardless of whether they are immediately adjacent.
+              </p>
+              <p>Example:</p>
+              <pre><code class="language-css">
+  /* Select all <p> elements that are siblings of an <h2> */
+  h2 ~ p {
+    color: #555;
+    line-height: 1.8;
+  }
+              </code></pre>
+              <p>
+                In this example, every <code class="language-css">&lt;p&gt;</code> that follows an <code class="language-css">&lt;h2&gt;</code> (and shares the same parent) will receive these styles.
+              </p>
+            </section>
+          </section>
+        </section>
+        
+        <!-- Writing Efficient Style Sheets -->
+        <section id="efficient-stylesheets">
+          <h3>• Writing Efficient Style Sheets</h3>
+          
+          <!-- Cascading -->
+          <section id="cascading">
+            <h4>o Cascading</h4>
+            <p>
+              Cascading refers to how the browser combines multiple CSS rules that apply to the same element.
+              Rules are applied based on their order, source, and specificity. The cascading nature ensures that if multiple styles conflict,
+              a clear hierarchy determines which style takes precedence.
+            </p>
+            <p>Example Explanation:</p>
+            <pre><code class="language-css">
+  /* Global style for paragraphs */
+  p {
+    color: black;
+  }
+  
+  /* More specific rule */
+  div p {
+    color: darkblue;
+  }
+            </code></pre>
+            <p>
+              In the above example, if a &lt;p&gt; element lies within a &lt;div&gt;, it will be styled with <code class="language-css">darkblue</code> even though a general rule sets all paragraphs to black.
+              This is a direct result of the cascade and more specific selector.
+            </p>
+          </section>
+          
+          <!-- Specificity -->
+          <section id="specificity">
+            <h4>o Specificity</h4>
+            <p>
+              Specificity determines which CSS rule is applied when multiple rules could match the same element. It is calculated based on the types of selectors.
+              In simple terms, IDs have the highest specificity, followed by classes and attributes, and finally type selectors.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* Type selector - specificity of 1 */
+  p {
+    color: black;
+  }
+  
+  /* Class selector - specificity of 10 */
+  .highlight {
+    color: green;
+  }
+  
+  /* ID selector - specificity of 100 */
+  #special {
+    color: red;
+  }
+            </code></pre>
+            <p>
+              In the above example, an element with <code class="language-css">id="special"</code> and class <code class="language-css">highlight</code> will be red because the ID selector has the highest specificity.
+            </p>
+          </section>
+        </section>
+        
+        <!-- Colors in CSS -->
+        <section id="colors-in-css">
+          <h3>• Colors in CSS</h3>
+          
+          <!-- Named Colors -->
+          <section id="named-colors">
+            <h4>o Named Colors</h4>
+            <p>
+              Named colors are the basic color names (like <code class="language-css">red</code>, <code class="language-css">blue</code>, and <code class="language-css">green</code>) that browsers support by default.
+              They are convenient for quick styling but offer less precision compared to other color formats.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* Using named colors for styling */
+  h1 {
+    color: navy;
+  }
+  p {
+    color: gray;
+  }
+            </code></pre>
+            <p>
+              In the example, <code class="language-css">navy</code> and <code class="language-css">gray</code> are named colors that will render a blue and gray hue respectively.
+            </p>
+          </section>
+          
+          <!-- Hexadecimal Codes -->
+          <section id="hexadecimal-codes">
+            <h4>o Hexadecimal Codes</h4>
+            <p>
+              Hexadecimal color codes provide a way to specify colors using a six-digit notation preceded by a hash (<code class="language-css">#</code>). Each pair of digits
+              represents the intensity of red, green, and blue components respectively (ranging from 00 to FF).
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* Example using hex colors */
+  div {
+    background-color: #ff5733; /* A vibrant orange-red */
+  }
+            </code></pre>
+            <p>
+              Here, <code class="language-css">#ff5733</code> is a hex code where <code class="language-css">FF</code> represents red at maximum intensity, and <code class="language-css">57</code> and <code class="language-css">33</code> define
+              the amounts of green and blue.
+            </p>
+          </section>
+          
+          <!-- RGB and HSL Values -->
+          <section id="rgb-hsl-values">
+            <h4>o RGB and HSL Values</h4>
+            <p>
+              RGB (Red, Green, Blue) values define colors by specifying the intensity of each component on a scale from 0 to 255.
+              HSL (Hue, Saturation, Lightness) values offer an alternative in which hue is an angle (0 to 360 degrees), saturation and lightness are percentages.
+            </p>
+            <p>Example using RGB:</p>
+            <pre><code class="language-css">
+  /* Styling using RGB */
+  header {
+    background-color: rgb(10, 84, 255);
+  }
+            </code></pre>
+            <p>Example using HSL:</p>
+            <pre><code class="language-css">
+  /* Styling using HSL */
+  header {
+    background-color: hsl(220, 100%, 50%);
+  }
+            </code></pre>
+            <p>
+              Both examples above result in a similar cool blue background, giving you multiple ways to achieve the same visual outcome.
+            </p>
+          </section>
+        </section>
+        
+        <!-- Gradients in CSS -->
+        <section id="gradients-in-css">
+          <h3>• Gradients in CSS</h3>
+          <p>
+            Gradients allow you to create smooth transitions between two or more specified colors. They can be used as backgrounds for elements
+            or as overlays to achieve visually appealing designs.
+          </p>
+          
+          <!-- Linear Gradients -->
+          <section id="linear-gradients">
+            <h4>o Linear Gradients</h4>
+            <p>
+              Linear gradients create a transition along a straight line. You can specify the direction (to right, to bottom, etc.) or use angles.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* Linear gradient background */
+  .button {
+    background: linear-gradient(to right, #0A84FF, #0057e7);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+            </code></pre>
+            <p>
+              In this example, the button background smoothly transitions from a bright blue (#0A84FF) to a deeper blue (#0057e7) from left to right.
+            </p>
+          </section>
+          
+          <!-- Radial Gradients -->
+          <section id="radial-gradients">
+            <h4>o Radial Gradients</h4>
+            <p>
+              Radial gradients emanate from a central point and radiate outward in a circular or elliptical shape.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* Radial gradient background */
+  .card {
+    background: radial-gradient(circle, #ffffff, #d3d3d3);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+            </code></pre>
+            <p>
+              This creates a subtle light-to-dark gradient effect, ideal for card or container backgrounds.
+            </p>
+          </section>
+          
+          <!-- Conic Gradients -->
+          <section id="conic-gradients">
+            <h4>o Conic Gradients</h4>
+            <p>
+              Conic gradients (or angular gradients) create a gradient with a circular progression through hues around a center point.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* Conic gradient used as a circular background */
+  .circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, #0A84FF, #0057e7, #0A84FF);
+  }
+            </code></pre>
+            <p>
+              In this example, the gradient changes around the circumference of the circle, creating a dynamic and colorful effect.
+            </p>
+          </section>
+        </section>
+        
+      </section>
+
+      <!-- 3. CSS Styling Essentials -->
+    <section id="css-styling-essentials">
+        <h2>3. CSS Styling Essentials</h2>
+        
+        <!-- Styling Text -->
+        <section id="styling-text">
+          <h3>• Styling Text</h3>
+          
+          <!-- Color, Alignment, Font -->
+          <section id="text-color-alignment-font">
+            <h4>o Color, Alignment, Font</h4>
+            <p>
+              Text styling in CSS is fundamental for creating readable and visually engaging content. The following properties are often used:
+            </p>
+            <ul>
+              <li><strong>color:</strong> Defines the color of the text. Accepts named colors, hexadecimal, RGB, or HSL values.</li>
+              <li><strong>text-align:</strong> Aligns the text horizontally within its container (e.g., left, right, center, or justify).</li>
+              <li><strong>font-family:</strong> Specifies the typeface for the text, with options to fall back to generic families.</li>
+            </ul>
+            <p>Example Code:</p>
+            <pre><code class="language-css">
+  /* Applying color, alignment, and font style to text */
+  p {
+    color: #007acc;           /* Sets text color to blue */
+    text-align: justify;       /* Justifies the text for neat alignment */
+    font-family: 'Arial', sans-serif; /* Uses Arial with sans-serif fallback */
+  }
+            </code></pre>
+            <p>
+              In this snippet, every paragraph is styled with a specified blue color, justified alignment, and Arial typeface to ensure consistency and readability.
+            </p>
+          </section>
+  
+          <!-- Line Height, Font Size, Font Family -->
+          <section id="text-line-height-font-size">
+            <h4>o Line Height, Font Size, Font Family</h4>
+            <p>
+              Beyond color and alignment, controlling the space between lines (<code class="language-css">line-height</code>) and the size of text (<code class="language-css">font-size</code>) is essential. Adjusting the font family further refines typography.
+            </p>
+            <p>Example Code:</p>
+            <pre><code class="language-css">
+  /* Adjusting line height and font size for improved readability */
+  p {
+    line-height: 1.8;                  /* Increases space between lines */
+    font-size: 18px;                   /* Sets a comfortable reading size */
+    font-family: 'Georgia', serif;     /* Uses a classic serif font for elegance */
+  }
+            </code></pre>
+            <p>
+              These properties work together to make the text comfortable to read while harmonizing with the overall design.
+            </p>
+          </section>
+        </section>
+  
+        <!-- Styling Links -->
+        <section id="styling-links">
+          <h3>• Styling Links</h3>
+          <p>
+            Links are interactive elements that require distinct styling based on their state. CSS offers pseudo-classes that enable you to style links in different states:
+          </p>
+          <!-- Unvisited, Visited, Hover, Active States -->
+          <section id="link-states">
+            <h4>o Unvisited, Visited, Hover, Active States</h4>
+            <p>
+              The primary pseudo-classes for links are:
+            </p>
+            <ul>
+              <li><strong>:link</strong> - Targets unvisited links.</li>
+              <li><strong>:visited</strong> - Targets links that the user has already visited.</li>
+              <li><strong>:hover</strong> - Applies when the user hovers the mouse pointer over the link.</li>
+              <li><strong>:active</strong> - Applies during the moment the link is being clicked.</li>
+            </ul>
+            <p>Example Code:</p>
+            <pre><code class="language-css">
+  /* Styling various states of a link */
+  a:link {
+    color: #0A84FF;         /* Blue for unvisited links */
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: #005bb5;         /* Darker blue for visited links */
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Underlines on hover for clarity */
+    color: #003f7f;
+  }
+  
+  a:active {
+    color: #ff4500;         /* A contrasting color during activation */
+  }
+            </code></pre>
+            <p>
+              This example demonstrates how careful link styling can provide clear interaction feedback and maintain a cohesive aesthetic throughout the website.
+            </p>
+          </section>
+        </section>
+  
+        <!-- Styling Lists -->
+        <section id="styling-lists">
+          <h3>• Styling Lists</h3>
+          <p>
+            Lists structure information using ordered (&lt;ol&gt;) or unordered (&lt;ul&gt;) elements. Default styling can be adjusted to enhance visual appeal.
+          </p>
+          <section id="unordered-ordered-lists">
+            <h4>o Unordered and Ordered Lists</h4>
+            <p>
+              Unordered lists typically display with bullet points, whereas ordered lists show numbers or letters. You can customize list markers, padding, and indentation:
+            </p>
+            <p>Example Code:</p>
+            <pre><code class="language-css">
+  /* Standard list styles */
+  ul {
+    list-style-type: disc; /* Bullet points */
+    padding-left: 20px;
+  }
+  
+  ol {
+    list-style-type: decimal; /* Numbers */
+    padding-left: 20px;
+  }
+  
+  /* Custom list style for a fancy look */
+  ul.custom {
+    list-style: none; /* Remove default markers */
+  }
+  
+  ul.custom li::before {
+    content: "•";
+    color: #0A84FF;
+    margin-right: 10px;
+  }
+            </code></pre>
+            <p>
+              These examples illustrate how to modify the default look of lists to match your site's design language.
+            </p>
+          </section>
+        </section>
+  
+        <!-- Styling Tables -->
+        <section id="styling-tables">
+          <h3>• Styling Tables</h3>
+          <p>
+            Tables are used to display structured data. Styling tables involves managing borders, padding, background colors, and alternate row colors to improve data readability.
+          </p>
+          <section id="basic-table-styles">
+            <h4>o Basic Table Styles</h4>
+            <p>
+              Common practices include setting <code class="language-css">border-collapse</code> to collapse borders, applying uniform padding to cells, and adding background colors to header cells or alternating rows.
+            </p>
+            <p>Example Code:</p>
+            <pre><code class="language-css">
+  /* Basic table styling */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+  /* Apply alternate row colors for better readability */
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+            </code></pre>
+            <p>
+              The above code creates a clean and structured table layout that is both accessible and visually appealing.
+            </p>
+          </section>
+        </section>
+  
+        <!-- Styling Images -->
+        <section id="styling-images">
+          <h3>• Styling Images</h3>
+          <p>
+            CSS not only controls text and layout but also how images appear. You can manage borders, sizes, and positioning easily.
+          </p>
+          <section id="images-borders-sizing-positioning">
+            <h4>o Borders, Sizing, Positioning</h4>
+            <p>
+              Key properties for image styling include:
+            </p>
+            <ul>
+              <li><strong>border:</strong> Adds a border around the image. You can control width, style, and color.</li>
+              <li><strong>width/height:</strong> Control the size of the image. Using <code class="language-css">auto</code> for height maintains aspect ratio.</li>
+              <li><strong>float:</strong> Positions the image to one side so that text can wrap around it.</li>
+            </ul>
+            <p>Example Code:</p>
+            <pre><code class="language-css">
+  /* Styling an image for a polished look */
+  img {
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    width: 300px;        /* Fixed width for consistency */
+    height: auto;        /* Maintain aspect ratio */
+    float: left;         /* Float image to the left */
+    margin-right: 20px;  /* Spacing between image and text */
+  }
+            </code></pre>
+            <p>
+              This example demonstrates adding subtle borders, controlling the image size, and using float positioning for an integrated layout.
+            </p>
+          </section>
+        </section>
+  
+        <!-- Positioning Elements -->
+        <section id="positioning-elements">
+          <h3>• Positioning Elements</h3>
+          <p>
+            CSS positioning determines how elements are placed within the layout. There are several positioning types to choose from:
+          </p>
+          <section id="position-types">
+            <h4>o Static, Relative, Absolute, Fixed</h4>
+            <p>
+              - <strong>Static:</strong> The default positioning method, where elements flow naturally with the document.
+              <br>- <strong>Relative:</strong> Positions an element relative to its normal position, enabling slight offsets.
+              <br>- <strong>Absolute:</strong> Removes the element from normal flow and positions it relative to its nearest positioned ancestor.
+              <br>- <strong>Fixed:</strong> Positions the element relative to the viewport so it stays in place during scrolling.
+            </p>
+            <p>Example Code:</p>
+            <pre><code class="language-css">
+  /* Demonstrating various positioning types */
+  
+  /* Static (default), no positioning applied */
+  .static-box {
+    position: static;
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  
+  /* Relative positioning for slight adjustment */
+  .relative-box {
+    position: relative;
+    top: 10px;
+    left: 20px;
+    background-color: #d0ebff;
+    padding: 10px;
+  }
+  
+  /* Absolute positioning for precise control */
+  .absolute-box {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    background-color: #ffd1dc;
+    padding: 10px;
+  }
+  
+  /* Fixed positioning for elements like sticky navbars */
+  .fixed-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #cce5ff;
+    padding: 10px;
+  }
+            </code></pre>
+            <p>
+              Each positioning method is useful for different scenarios: static elements follow normal flow,
+              relative allows for fine-tuning, absolute is ideal for overlays or pop-ups, and fixed keeps elements visible on scroll.
+            </p>
+          </section>
+        </section>
+  
+        <!-- Floating and Overlapping Elements -->
+        <section id="floating-overlapping-elements">
+          <h3>• Floating and Overlapping Elements</h3>
+          <p>
+            To create dynamic layouts, CSS allows you to float elements and manage overlapping content using <code class="language-css">z-index</code>.
+          </p>
+          <section id="float-zindex">
+            <h4>o Float, Z-index</h4>
+            <p>
+              - <strong>Float:</strong> Removes an element from the normal flow and allows text or inline elements to wrap around it.
+              <br>- <strong>Z-index:</strong> Establishes the stacking order for positioned elements. Higher values appear on top.
+            </p>
+            <p>Example Code:</p>
+            <pre><code class="language-css">
+  /* Floating an image for text wrapping */
+  .float-image {
+    float: left;
+    margin-right: 15px;
+  }
+  
+  /* Overlapping boxes using z-index */
+  .overlap-container {
+    position: relative;
+  }
+  
+  .overlap-box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(10, 132, 255, 0.8);
+    z-index: 10; /* This box appears on top */
+  }
+  
+  .overlap-box-secondary {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 59, 48, 0.8);
+    z-index: 5;  /* This box appears below the primary one */
+  }
+            </code></pre>
+            <p>
+              In this example, if both overlapping boxes share the same container, the one with the higher <code class="language-css">z-index</code> will be visible on top.
+            </p>
+          </section>
+        </section>
+  
+        <!-- The Box Model -->
+        <section id="the-box-model">
+          <h3>• The Box Model</h3>
+          <p>
+            The CSS box model is central to layout design. It defines how the size and spacing of elements are calculated.
+          </p>
+          <section id="box-model-components">
+            <h4>o Content, Padding, Border, Margin</h4>
+            <p>
+              The box model consists of:
+            </p>
+            <ul>
+              <li><strong>Content:</strong> The actual content such as text or images.</li>
+              <li><strong>Padding:</strong> The space between the content and the border. It ensures that text does not touch the border.</li>
+              <li><strong>Border:</strong> A visible boundary that surrounds the padding and content. Its thickness, style, and color can be customized.</li>
+              <li><strong>Margin:</strong> The outermost space that separates the element from other elements.</li>
+            </ul>
+            <p>Example Code:</p>
+            <pre><code class="language-css">
+  /* Demonstrating the CSS box model */
+  .box-model-example {
+    width: 300px;             /* Width of the content area */
+    padding: 20px;            /* Space between the content and border */
+    border: 5px solid #333;   /* Border surrounding the element */
+    margin: 30px;             /* Space outside the element */
+    background-color: #f9f9f9;
+  }
+  
+  /*
+  Visual Representation:
+  [ Margin ]
+    [ Border ]
+      [ Padding ]
+        [ Content ]
+  */
+            </code></pre>
+            <p>
+              By adjusting each of these properties, you can control the overall layout, spacing, and visual balance of your design. Understanding the box model is critical for building responsive interfaces and ensuring consistent behavior across different browsers.
+            </p>
+          </section>
+        </section>
+      </section>
+      <!-- 4. Advanced CSS Techniques -->
+    <section id="advanced-css-techniques">
+        <h2>4. Advanced CSS Techniques</h2>
+        
+        <!-- Display Property -->
+        <section id="display-property">
+          <h3>• Display Property</h3>
+          <p>The <code class="language-css">display</code> property in CSS determines how an element is rendered in the document flow. It affects layout, visibility, and interactivity of elements. Below, we examine three common display types: block, inline, and grid.</p>
+          
+          <!-- Block -->
+          <section id="display-block">
+            <h4>o Block</h4>
+            <p>
+              A block-level element starts on a new line and takes up the full available width. Common block elements include <code class="language-css">&lt;div&gt;</code>, <code class="language-css">&lt;p&gt;</code>, and <code class="language-css">&lt;h1&gt;</code>–<code class="language-css">&lt;h6&gt;</code>. They also accept margin and padding.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* All paragraphs are block-level elements by default */
+  p {
+    display: block;
+    background-color: #e0e0e0;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+            </code></pre>
+            <p>
+              In this example, every <code class="language-css">&lt;p&gt;</code> starts on its own line, has a light background, and consistent spacing.
+            </p>
+          </section>
+          
+          <!-- Inline -->
+          <section id="display-inline">
+            <h4>o Inline</h4>
+            <p>
+              Inline elements do not start on a new line; they flow within other elements. Common inline elements include <code class="language-css">&lt;span&gt;</code>, <code class="language-css">&lt;a&gt;</code>, and <code class="language-css">&lt;strong&gt;</code>. Inline elements ignore top and bottom margins or paddings.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* Using inline display for emphasis within a paragraph */
+  span.important {
+    display: inline;
+    color: #d63384;
+    font-weight: bold;
+  }
+            </code></pre>
+            <p>
+              Here, the <code class="language-css">.important</code> class applied to a <code class="language-css">&lt;span&gt;</code> alters its color and weight without forcing a new line.
+            </p>
+          </section>
+          
+          <!-- Grid -->
+          <section id="display-grid">
+            <h4>o Grid</h4>
+            <p>
+              The grid display enables a two-dimensional layout system with rows and columns. It provides a powerful way to create complex responsive layouts.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* Set an element to grid to enable grid layout */
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    grid-gap: 20px;  /* Gap between grid items */
+  }
+            </code></pre>
+            <p>
+              The above CSS turns the element with class <code class="language-css">container</code> into a grid, organizing its immediate children into three equally spaced columns.
+            </p>
+          </section>
+        </section>
+        
+        <!-- CSS Grid Layouts -->
+        <section id="css-grid-layouts">
+          <h3>• CSS Grid Layouts</h3>
+          <p>
+            CSS Grid Layout excels at creating complex designs by dividing a container into rows and columns. It enables you to place items precisely within a grid with minimal code.
+          </p>
+          <!-- Grid Container and Items -->
+          <section id="grid-container-items">
+            <h4>o Grid Container and Items</h4>
+            <p>
+              A grid container is any element with its <code class="language-css">display</code> property set to <code class="language-css">grid</code> (or <code class="language-css">inline-grid</code>). Its direct children become grid items. You can define grid structure via properties like <code class="language-css">grid-template-columns</code>, <code class="language-css">grid-template-rows</code>, and <code class="language-css">grid-gap</code>.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* CSS Grid Example */
+  #grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  #grid-container .grid-item {
+    background-color: #dcdcdc;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+  }
+            </code></pre>
+            <p>
+              In this example, the element with id <code class="language-css">grid-container</code> holds several grid items organized into three columns with gaps between them.
+            </p>
+          </section>
+        </section>
+        
+        <!-- Responsive Design -->
+        <section id="responsive-design">
+          <h3>• Responsive Design</h3>
+          <p>
+            Responsive design ensures that your website adapts to various screen sizes and devices. Below are key techniques to achieve responsiveness.
+          </p>
+          <!-- Viewport Meta Tag -->
+          <section id="viewport-meta-tag">
+            <h4>o Viewport Meta Tag</h4>
+            <p>
+              The viewport meta tag instructs browsers on how to control the page's dimensions and scaling. It is critical for mobile accessibility.
+            </p>
+            <p>Example (placed inside the &lt;head&gt;):</p>
+            <pre><code class="language-css">
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            </code></pre>
+            <p>
+              This line tells the browser that the width of the page should match the screen's width at a scale of 1.0, ensuring the design works well on all devices.
+            </p>
+          </section>
+          
+          <!-- Media Queries -->
+          <section id="media-queries">
+            <h4>o Media Queries</h4>
+            <p>
+              Media queries allow you to apply CSS rules based on different conditions, such as viewport width, height, pixel density, and more. They are essential for adapting layouts to various devices.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* A media query for devices with a viewport width of 768px or below */
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+    #grid-container {
+      grid-template-columns: 1fr; /* Single column layout */
+    }
+  }
+            </code></pre>
+            <p>
+              With this media query, the default layout changes when the viewport is smaller than 768 pixels, providing a better user experience on mobile devices.
+            </p>
+          </section>
+          
+          <!-- Relative Measurements -->
+          <section id="relative-measurements">
+            <h4>o Relative Measurements</h4>
+            <p>
+              Using relative units like percentages (%), ems, rems, vw (viewport width), and vh (viewport height) creates flexible layouts that adapt dynamically to the screen size.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* A container width set in percentages and font sizes using rem */
+  .container {
+    width: 80%;         /* 80% of the parent container or viewport */
+    padding: 2rem;      /* 2 times the root element's font-size */
+    margin: 0 auto;
+  }
+            </code></pre>
+            <p>
+              This technique ensures your layout scales gracefully on different devices.
+            </p>
+          </section>
+        </section>
+        
+        <!-- CSS Animations -->
+        <section id="css-animations">
+          <h3>• CSS Animations</h3>
+          <p>
+            CSS animations enhance the user experience by smoothly transitioning elements from one style to another or applying dynamic transformations. Two key techniques involve transitions and transforms.
+          </p>
+          <!-- Transitions -->
+          <section id="transitions">
+            <h4>o Transitions</h4>
+            <p>
+              Transitions enable a change in property values to occur smoothly over a specified duration instead of instantaneously. They can be applied to properties such as color, background, and positioning.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* Smooth background-color transition for a button */
+  .button {
+    background-color: #0A84FF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #0057e7;
+  }
+            </code></pre>
+            <p>
+              The transition applied to the <code class="language-css">.button</code> class creates a smooth color-change effect when the user hovers over the button.
+            </p>
+          </section>
+          
+          <!-- Transforms -->
+          <section id="transforms">
+            <h4>o Transforms</h4>
+            <p>
+              Transforms allow you to modify the visual presentation of an element by moving, scaling, rotating, or skewing it. They can be combined with transitions for animated effects.
+            </p>
+            <p>Example:</p>
+            <pre><code class="language-css">
+  /* Applying a scale and rotation transform on hover */
+  .card {
+    width: 250px;
+    height: 150px;
+    background-color: #ffd1dc;
+    transition: transform 0.5s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05) rotate(5deg);
+  }
+            </code></pre>
+            <p>
+              In this code, when a <code class="language-css">.card</code> element is hovered, it slightly enlarges and rotates, creating an engaging effect.
+            </p>
+          </section>
+        </section>
+      </section>
+
+
+    <p id="goback"><a href="../../index.html">Go Back?</a></p>
+   
+
+    <footer>
+        <p>&copy; 2025 Semantic HTML Tutorial</p>
+        <p><a href="../../index.html">Go Back?</a></p>
+    </footer>
+    
+
+</main>
+    <script src="script.js"></script>
+    <script>
+      // Helper: Check if an element's center is within the threshold of the viewport center.
+      function isElementNearCenter(elem, threshold = 50) {
+        const rect = elem.getBoundingClientRect();
+        const elemCenter = rect.top + rect.height / 2;
+        const viewportCenter = window.innerHeight / 2;
+        return Math.abs(elemCenter - viewportCenter) < threshold;
+      }
+      
+      // Update which elements should be "lifted" based on their position relative to the viewport center.
+      function updateCenterLift() {
+        document.querySelectorAll("code").forEach(elem => {
+          if (isElementNearCenter(elem)) {
+            elem.classList.add('lifted');
+          } else {
+            elem.classList.remove('lifted');
+          }
+        });
+      }
+      
+      // Listen to scroll and resize events, then update the lifted state.
+      window.addEventListener("scroll", updateCenterLift);
+      window.addEventListener("resize", updateCenterLift);
+      
+      // Initial check on page load.
+      updateCenterLift();
+    </script>
+</body>
+</html>

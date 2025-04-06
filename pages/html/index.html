@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Metadata and styling for an in-depth HTML tutorial on the functionality of HTML.
+    This head section includes character encoding, a responsive viewport setting,
+    an external font from Google Fonts, and internal CSS that follows your provided
+    reference color guide. The CSS also defines styles for code examples and diagram placeholders.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed HTML Tutorial</title>
+  <link rel="icon" href="../../assets/images/HTML.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-funky.min.css" rel="stylesheet">
+
+  <!-- External Prism JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+  <!-- Custom Stylesheet (optional) -->
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <header>
+    <h1>Detailed HTML Tutorial</h1>
+    <p>Understanding the Functionality of HTML: A deep dive into HTML structure, components, and best practices.</p>
+    <div class="progress-bar-container" id="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+  </header>
+  
+  <main>
+    <!-- ======================================================= -->
+    <!-- 1. Understanding the Functionality of HTML             -->
+    <!-- ======================================================= -->
+    <section id="1-understanding-html">
+      <h2>1. Understanding the Functionality of HTML</h2>
+      
+      <!-- HTML Structure -->
+      <h3>1.1 HTML Structure</h3>
+      <p>
+        HTML (HyperText Markup Language) is the standard language used to create and design web pages. Its structure is based on elements defined by tags, which the browser interprets to render the website.
+      </p>
+      <div class="diagram">
+        Diagram: A tree diagram showing the document hierarchy:
+        <br> - <code>&lt;!DOCTYPE html&gt;</code> at the top
+        <br> - Root element <code>&lt;html&gt;</code>
+        <br> - Child elements <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>
+      </div>
+      
+      <!-- Basic Components of an HTML Document -->
+      <h3>1.2 Basic Components of an HTML Document</h3>
+      <p>
+        Every HTML document starts with a doctype declaration which informs the browser to use HTML5. The document is then divided into the <code>&lt;head&gt;</code> (metadata, styles, and links) and the <code>&lt;body&gt;</code> (visible content) sections.
+      </p>
+      <div class="diagram">
+        Diagram: A labeled block diagram highlighting:
+        <br> - Doctype declaration
+        <br> - <code>&lt;html&gt;</code> element nesting <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>
+      </div>
+      
+      <!-- Example: A Basic HTML Document -->
+      <h3>1.3 Example: A Basic HTML Document</h3>
+      <p>
+        The following example showcases the minimal structure needed for a basic HTML document:
+      </p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+          &lt;html lang="en"&gt;
+            &lt;head&gt;
+              &lt;meta charset="UTF-8"&gt;
+              &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+              &lt;title&gt;Basic Document&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;h1&gt;Hello, World!&lt;/h1&gt;
+              &lt;p&gt;This is a basic HTML document example.&lt;/p&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+      </code></pre>>
+      
+      <!-- Elements and Tags -->
+      <h3>1.4 Elements and Tags</h3>
+      <p>
+        HTML is composed of elements that are defined by tags. Tags tell the browser how to interpret and display the content. They come in pairs (start tag and end tag) except for self-closing tags.
+      </p>
+      
+      <!-- Elements -->
+      <h4>1.4.1 Elements</h4>
+      <p>
+        An HTML element is a container for content with an optional set of attributes. For example:
+      </p>
+      <pre><code>&lt;div&gt;This is a container element.&lt;/div&gt;</code></pre>
+      <div class="diagram">
+        Diagram: Show a boxed element with the opening tag (<code>&lt;div&gt;</code>), inner content, and closing tag (<code>&lt;/div&gt;</code>).
+      </div>
+      
+      <!-- Tags -->
+      <h4>1.4.2 Tags</h4>
+      <p>
+        Tags provide the syntax for elements. They are written within angle brackets. For example, the paragraph tag <code>&lt;p&gt;</code> encloses text to form a paragraph.
+      </p>
+      <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+      
+      <!-- Standard Tags -->
+      <h4>1.4.3 Standard Tags</h4>
+      <p>
+        Standard tags include widely used elements like <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;header&gt;</code>, and <code>&lt;footer&gt;</code>. Each of these serves a particular purpose in structuring your content.
+      </p>
+      <pre><code>&lt;header&gt;Header content here&lt;/header&gt;
+&lt;footer&gt;Footer content here&lt;/footer&gt;</code></pre>
+      
+      <!-- Self-Closing Tags -->
+      <h4>1.4.4 Self-Closing Tags</h4>
+      <p>
+        Some HTML tags do not require a closing tag; these are known as self-closing tags. They are typically used for embedded content or line breaks.
+      </p>
+      <pre><code>&lt;img src="image.jpg" alt="A descriptive text"&gt;
+&lt;br&gt;</code></pre>
+      
+      <!-- Importance of Proper Tag Usage -->
+      <h4>1.4.5 Importance of Proper Tag Usage</h4>
+      <p>
+        Correct and semantic tag usage ensures that browsers render your content properly while also aiding screen readers and search engine optimization. Improper nesting or missed closing tags can lead to unexpected behavior.
+      </p>
+      <div class="diagram">
+        Diagram: Flowchart comparing correct tag nesting versus incorrect nesting.
+      </div>
+      
+      <!-- Attributes -->
+      <h3>1.5 Attributes</h3>
+      <p>
+        Attributes are used to define additional properties for HTML elements. They appear in the start tag in a key-value pair format.
+      </p>
+      
+      <!-- Definition -->
+      <h4>1.5.1 Definition</h4>
+      <p>
+        An attribute provides extra information about an element. For example, <code>href</code> in an anchor tag specifies the destination URL.
+      </p>
+      
+      <!-- Example Usage -->
+      <h4>1.5.2 Example Usage</h4>
+      <p>
+        Consider the following anchor tag with multiple attributes:
+      </p>
+      <pre><code>&lt;a href="https://www.example.com" title="Visit Example"&gt;Visit Example&lt;/a&gt;</code></pre>
+      
+      <!-- Best Practices -->
+      <h4>1.5.3 Best Practices</h4>
+      <p>
+        - Always quote attribute values (e.g., <code>href="..."</code>).
+        <br>- Use clear and descriptive attribute names.
+        <br>- Avoid including empty attributes unless necessary.
+      </p>
+      
+      <!-- Document Structure Details -->
+      <h3>1.6 Document Structure Details</h3>
+      
+      <!-- <html> lang Attribute -->
+      <h4>1.6.1 &lt;html&gt; lang Attribute</h4>
+      <p>
+        The <code>lang</code> attribute in the <code>&lt;html&gt;</code> tag specifies the primary language of the web page. This assists browsers and accessibility tools.
+      </p>
+      <pre><code>&lt;html lang="en"&gt;</code></pre>
+      
+      <!-- Metadata in <head> -->
+      <h4>1.6.2 Metadata in &lt;head&gt;</h4>
+      <p>
+        The <code>&lt;head&gt;</code> section contains metadata that is essential for the page's operation. This includes character encoding, responsive design settings, links to external stylesheets, and inline styles.
+      </p>
+      
+      <!-- <meta> Tags -->
+      <h5>1.6.2.1 &lt;meta&gt; Tags</h5>
+      <p>
+        <code>&lt;meta&gt;</code> tags provide metadata such as the charset and viewport configuration:
+      </p>
+      <pre><code>&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+      
+      <!-- <link> Tags -->
+      <h5>1.6.2.2 &lt;link&gt; Tags</h5>
+      <p>
+        These are used to link external resources such as CSS files and fonts.
+      </p>
+      <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+      
+      <!-- <style> Tags -->
+      <h5>1.6.2.3 &lt;style&gt; Tags</h5>
+      <p>
+        The <code>&lt;style&gt;</code> tag is used to include internal CSS.
+      </p>
+      <pre><code>&lt;style&gt;
+  /* Internal CSS goes here */
+&lt;/style&gt;</code></pre>
+      
+      <!-- Content in <body> -->
+      <h4>1.6.3 Content in &lt;body&gt;</h4>
+      <p>
+        All the visible content—text, images, videos, and interactive elements—goes inside the <code>&lt;body&gt;</code> element.
+      </p>
+      <pre><code>&lt;body&gt;
+  &lt;p&gt;Visible content goes here&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+      
+      <!-- Writing Well-Organized HTML Syntax -->
+      <h3>1.7 Writing Well-Organized HTML Syntax</h3>
+      <p>
+        Consistent and well-organized HTML is easier to maintain and improves readability, especially when multiple developers work on the code.
+      </p>
+      
+      <!-- Consistency and Readability -->
+      <h4>1.7.1 Consistency and Readability</h4>
+      <p>
+        A consistent coding style helps both the author and others quickly understand the structure of the document.
+      </p>
+      <pre><code>&lt;div&gt;
+  &lt;p&gt;This is a consistently structured element.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      
+      <!-- Indentation -->
+      <h4>1.7.2 Indentation</h4>
+      <p>
+        Proper indentation reveals the document hierarchy and supports maintainability.
+      </p>
+      <pre><code>&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      
+      <!-- Quoting Attributes -->
+      <h4>1.7.3 Quoting Attributes</h4>
+      <p>
+        Always enclose attribute values in quotes to avoid ambiguities.
+      </p>
+      <pre><code>&lt;a href="https://example.com"&gt;Click here&lt;/a&gt;</code></pre>
+      
+      <!-- Omitting Empty Attributes -->
+      <h4>1.7.4 Omitting Empty Attributes</h4>
+      <p>
+        Do not include attributes without a value unless necessary. This helps in keeping the code clean.
+      </p>
+      <pre><code>&lt;input type="text" placeholder="Your name"&gt;</code></pre>
+      
+      <!-- Comments -->
+      <h4>1.7.5 Comments</h4>
+      <p>
+        Comments are used to annotate code. They do not affect the rendered page but are invaluable for maintenance.
+      </p>
+      <pre><code>&lt;!-- This is a comment explaining the following section --&gt;</code></pre>
+      
+      <!-- In-Depth Analysis -->
+      <h3>1.8 In-Depth Analysis</h3>
+      <p>
+        Beyond basic syntax, consider how your code impacts browser performance, accessibility, and maintainability. Clean code can improve load times and usability, making your website accessible to more users and easier to update in the future.
+      </p>
+      
+      <!-- Browser Compatibility -->
+      <h4>1.8.1 Browser Compatibility</h4>
+      <p>
+        Following HTML standards and best practices ensures that your website renders correctly on various browsers and devices.
+      </p>
+      <div class="diagram">
+        Diagram: A series of browser logos (Chrome, Firefox, Safari, Edge) with check marks to indicate compatibility.
+      </div>
+      
+      <!-- Semantic Relevance -->
+      <h4>1.8.2 Semantic Relevance</h4>
+      <p>
+        Semantic HTML uses tags that accurately describe their content. For instance, use <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code> rather than generic <code>&lt;div&gt;</code> tags. This enhances SEO and accessibility.
+      </p>
+      <div class="diagram">
+        Diagram: Side-by-side examples of semantic markup versus non-semantic markup.
+      </div>
+      
+      <!-- Performance and Maintenance -->
+      <h4>1.8.3 Performance and Maintenance</h4>
+      <p>
+        Well-organized, semantic code minimizes page load times and simplifies future modifications and debugging. Efficient HTML structure also supports better caching and resource management.
+      </p>
+      <div class="diagram">
+        Diagram: A performance gauge along with a checklist labeled "Maintenance" showing code improvements.
+      </div>
+    </section>
+
+
+
+    <h1>Semantic HTML – Detailed Overview</h1>
+    <p>This tutorial dives extremely deep into Semantic HTML, covering Structural Markup, Content Models, Semantic Elements, Emphasis, and Best Practices.</p>
+    
+    
+    <main>
+    <!-- ======================================================= -->
+    <!-- 1. Structural Markup                                -->
+    <!-- ======================================================= -->
+    <section id="structural-markup">
+        <h2>1. Structural Markup</h2>
+        
+        <!-- Definition -->
+        <h3>1.1 Definition</h3>
+        <p>
+        Structural markup is the practice of using HTML tags that describe the layout and sections of your content. It provides a framework so that both browsers and assistive technologies can understand the document hierarchy and content grouping.
+        </p>
+        <div class="diagram">
+        Diagram: A hierarchical tree diagram showing the document structure with &lt;header&gt;, &lt;main&gt;, and &lt;footer&gt;.
+        </div>
+        
+        <!-- Block Elements -->
+        <h3>1.2 Block Elements</h3>
+        <p>
+        Block elements are those that typically start on a new line and span the full width available. They structure the layout of your page by grouping content into distinct sections.
+        </p>
+        <p>Examples include:</p>
+        <pre><code>&lt;div&gt;...&lt;/div&gt;
+&lt;section&gt;...&lt;/section&gt;
+&lt;article&gt;...&lt;/article&gt;
+&lt;aside&gt;...&lt;/aside&gt;
+&lt;header&gt;...&lt;/header&gt;
+&lt;footer&gt;...&lt;/footer&gt;</code></pre>
+        <div class="diagram">
+        Diagram: A visual comparing block elements laid out vertically.
+        </div>
+        
+        <!-- Inline Elements -->
+        <h3>1.3 Inline Elements</h3>
+        <p>
+        Inline elements do not force a line break. They are typically used for small fragments within a block element, such as emphasizing a word or linking text.
+        </p>
+        <p>Examples include:</p>
+        <pre><code>&lt;span&gt;...&lt;/span&gt;
+&lt;a href="#"&gt;Link&lt;/a&gt;
+&lt;strong&gt;...&lt;/strong&gt;
+&lt;em&gt;...&lt;/em&gt;</code></pre>
+        <div class="diagram">
+        Diagram: Illustrate inline elements embedded within block content (e.g., a span inside a paragraph).
+        </div>
+    </section>
+    
+    <!-- ======================================================= -->
+    <!-- 2. Content Models                                    -->
+    <!-- ======================================================= -->
+    <section id="content-models">
+        <h2>2. Content Models</h2>
+        
+        <!-- Flow Content -->
+        <h3>2.1 Flow Content</h3>
+        <p>
+        Flow content refers to a broad category of HTML elements that can be used as the primary content of a document. This includes text, images, and most embedded media that flow naturally in the layout.
+        </p>
+        <pre><code>&lt;p&gt;This is a paragraph which is part of the flow content.&lt;/p&gt;</code></pre>
+        <div class="diagram">
+        Diagram: Flow content represented as a stream of textual blocks with images and links.
+        </div>
+        
+        <!-- Sectioning Content -->
+        <h3>2.2 Sectioning Content</h3>
+        <p>
+        Sectioning content elements define distinct sections of a document that are related under a common theme. They help organize content into chapters, articles, or regions.
+        </p>
+        <pre><code>&lt;section&gt;...&lt;/section&gt;
+&lt;nav&gt;...&lt;/nav&gt;</code></pre>
+        <div class="diagram">
+        Diagram: A layout showing how sectioning elements like &lt;section&gt; and &lt;nav&gt; partition a page.
+        </div>
+        
+        <!-- Heading Content -->
+        <h3>2.3 Heading Content</h3>
+        <p>
+        Heading content consists of the elements used for document headings. They range from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> and establish the hierarchical structure of the document.
+        </p>
+        <pre><code>&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h2&gt;Subheading&lt;/h2&gt;
+&lt;h3&gt;Section Title&lt;/h3&gt;</code></pre>
+        <div class="diagram">
+        Diagram: A table of contents style diagram showing different header levels.
+        </div>
+        
+        <!-- Phrasing Content -->
+        <h3>2.4 Phrasing Content</h3>
+        <p>
+        Phrasing content includes the text and the elements that mark up fragments of text within blocks. It is used for the text-level semantics within paragraphs or headings.
+        </p>
+        <pre><code>&lt;span&gt;Inline text&lt;/span&gt;
+&lt;a href="#"&gt;Link text&lt;/a&gt;</code></pre>
+        <div class="diagram">
+        Diagram: A breakdown of a paragraph showing how phrases are styled differently.
+        </div>
+        
+        <!-- Embedded Content -->
+        <h3>2.5 Embedded Content</h3>
+        <p>
+        Embedded content elements are used to integrate external resources within a webpage. This includes images, audio, video, and other media that is “embedded” directly into the document.
+        </p>
+        <pre><code>&lt;img src="image.jpg" alt="Descriptive text"&gt;
+&lt;video controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+        <div class="diagram">
+        Diagram: A block illustrating an image and a video player embedded within a webpage.
+        </div>
+        
+        <!-- Interactive Content -->
+        <h3>2.6 Interactive Content</h3>
+        <p>
+        Interactive content comprises elements that users can interact with—such as forms, buttons, and other components that respond to user inputs. These elements are designed for dynamic engagement.
+        </p>
+        <pre><code>&lt;button type="button"&gt;Click Me&lt;/button&gt;
+&lt;form action="/submit" method="post"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;input type="submit" value="Send"&gt;
+&lt;/form&gt;</code></pre>
+        <div class="diagram">
+        Diagram: A flow diagram that shows user interaction from clicking a button to a form submission.
+        </div>
+    </section>
+    
+    <!-- ======================================================= -->
+    <!-- 3. Semantic Elements                                 -->
+    <!-- ======================================================= -->
+    <section id="semantic-elements">
+        <h2>3. Semantic Elements</h2>
+        
+        <!-- Article -->
+        <h3>3.1 &lt;article&gt;</h3>
+        <p>
+        The <code>&lt;article&gt;</code> element is used to encapsulate a self-contained composition in a page. It could represent a blog post, news article, or forum post.
+        </p>
+        <pre><code>&lt;article&gt;
+    &lt;h2&gt;Article Title&lt;/h2&gt;
+    &lt;p&gt;Content of the article...&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+        <div class="diagram">
+        Diagram: An article block showing a title, image, and body text.
+        </div>
+        
+        <!-- Section -->
+        <h3>3.2 &lt;section&gt;</h3>
+        <p>
+        The <code>&lt;section&gt;</code> element represents a thematic grouping of content, typically with its own heading. It's ideal for dividing content into chapters or segments based on subject.
+        </p>
+        <pre><code>&lt;section&gt;
+    &lt;h2&gt;Section Title&lt;/h2&gt;
+    &lt;p&gt;Section content...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+        <div class="diagram">
+        Diagram: Multiple sections within a page, each with its header and body.
+        </div>
+        
+        <!-- Aside -->
+        <h3>3.3 &lt;aside&gt;</h3>
+        <p>
+        The <code>&lt;aside&gt;</code> element is used for content that is related tangentially to the surrounding content. It’s commonly used for sidebars, pull quotes, or advertisements.
+        </p>
+        <pre><code>&lt;aside&gt;
+    &lt;p&gt;Supplementary content, such as related links or information.&lt;/p&gt;
+&lt;/aside&gt;</code></pre>
+        <div class="diagram">
+        Diagram: A webpage layout highlighting the aside element as a sidebar to main content.
+        </div>
+        
+        <!-- Nav -->
+        <h3>3.4 &lt;nav&gt;</h3>
+        <p>
+        The <code>&lt;nav&gt;</code> element defines a section of navigation links. It is used to enclose the major navigational blocks on the page.
+        </p>
+        <pre><code>&lt;nav&gt;
+    &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+        <div class="diagram">
+        Diagram: Navigation menu layout with links arranged horizontally.
+        </div>
+        
+        <!-- Footer -->
+        <h3>3.5 &lt;footer&gt;</h3>
+        <p>
+        The <code>&lt;footer&gt;</code> element defines the footer for a document or section. It typically contains information such as author details, copyright information, and links to terms and conditions.
+        </p>
+        <pre><code>&lt;footer&gt;
+    &lt;p&gt;&copy; 2025 Your Website Name&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+        <div class="diagram">
+        Diagram: A page layout highlighting the footer area at the bottom.
+        </div>
+    </section>
+    
+    <!-- ======================================================= -->
+    <!-- 4. Emphasis                                          -->
+    <!-- ======================================================= -->
+    <section id="emphasis">
+        <h2>4. Emphasis</h2>
+        
+        <!-- &lt;em&gt; Tag -->
+        <h3>4.1 &lt;em&gt; Tag</h3>
+        <p>
+        The <code>&lt;em&gt;</code> tag is used to emphasize text. It typically renders text in italics and signifies stress emphasis, which may be interpreted by screen readers.
+        </p>
+        <pre><code>&lt;p&gt;This is an &lt;em&gt;important&lt;/em&gt; point.&lt;/p&gt;</code></pre>
+        <div class="diagram">
+        Diagram: Comparison showing normal text versus text wrapped in the &lt;em&gt; tag.
+        </div>
+        
+        <!-- &lt;strong&gt; Tag -->
+        <h3>4.2 &lt;strong&gt; Tag</h3>
+        <p>
+        The <code>&lt;strong&gt;</code> tag indicates that its contents are of strong importance. Visually, it usually appears as bold text, and semantically, it conveys priority and importance.
+        </p>
+        <pre><code>&lt;p&gt;This is a &lt;strong&gt;critical&lt;/strong&gt; notice.&lt;/p&gt;</code></pre>
+        <div class="diagram">
+        Diagram: A side-by-side text snippet demonstration comparing text rendered with and without the &lt;strong&gt; tag.
+        </div>
+    </section>
+    
+    <!-- ======================================================= -->
+    <!-- 5. In-Depth Analysis & Best Practices                -->
+    <!-- ======================================================= -->
+    <section id="analysis-best-practices">
+        <h2>5. In-Depth Analysis & Best Practices</h2>
+        
+        <!-- Clarity & Maintainability -->
+        <h3>5.1 Clarity &amp; Maintainability</h3>
+        <p>
+        Using semantic HTML with clear, well-organized markup improves the clarity of your code. Such practices enhance maintainability, making it easier for you or other developers to update the code without introducing errors.
+        </p>
+        <pre><code>&lt;!-- A well-structured section for an article --&gt;
+&lt;article&gt;
+    &lt;header&gt;
+    &lt;h1&gt;Article Title&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;section&gt;
+    &lt;p&gt;Article content goes here.&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;footer&gt;
+    &lt;p&gt;Author information&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+        <div class="diagram">
+        Diagram: Flowchart showing the maintainable structure of a semantic HTML document.
+        </div>
+        
+        <!-- Accessibility -->
+        <h3>5.2 Accessibility</h3>
+        <p>
+        Semantic HTML is one of the critical components of accessible web design. By using the correct elements, you ensure that assistive technologies (screen readers, for instance) can interpret the content correctly. This leads to a better user experience for those with disabilities.
+        </p>
+        <pre><code>&lt;nav aria-label="Main Navigation"&gt;
+    &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#services"&gt;Services&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+        <div class="diagram">
+        Diagram: A schematic showing the relationship between semantic HTML and accessible features (ARIA, landmarks, etc.).
+        </div>
+        
+        <!-- SEO Benefits -->
+        <h3>5.3 SEO Benefits</h3>
+        <p>
+        Search engines rely on semantic HTML to index page content effectively. Proper use of headings, sectioning, and clear structure helps search engines understand your content, leading to better optimization in search results.
+        </p>
+        <pre><code>&lt;header&gt;
+    &lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;section&gt;
+    &lt;h2&gt;Subheading&lt;/h2&gt;
+    &lt;p&gt;Relevant content...&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+        <div class="diagram">
+        Diagram: A flow diagram linking semantic elements (headings, sections) with improved search engine ranking.
+        </div>
+        
+        <!-- Consistency -->
+        <h3>5.4 Consistency</h3>
+        <p>
+        Consistently using semantic HTML across your entire codebase not only makes your markup easier to read and maintain, but it also enforces design standards within your project. Consistent structure leads to predictable behavior, which aids debugging and future enhancements.
+        </p>
+        <pre><code>&lt;!-- Consistently using semantic elements across multiple pages --&gt;
+&lt;header&gt;...&lt;/header&gt;
+&lt;main&gt;...&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</code></pre>
+        <div class="diagram">
+        Diagram: A side-by-side comparison of consistent versus inconsistent markup.
+        </div>
+    </section>
+    
+    
+    <h1>HTML Components – Detailed Tutorial</h1>
+    <p>Explore the intricate details of Lists, Links, Images, Tables, Forms, and Adding Audio/Video with in-depth examples and diagrams.</p>
+    
+    
+    <!-- ======================================================= -->
+    <!-- Section 3: HTML Components                           -->
+    <!-- ======================================================= -->
+    <section id="html-components">
+        <h2>3. HTML Components</h2>
+        
+        <!-- ======================================================= -->
+        <!-- 3.1 Lists                                           -->
+        <!-- ======================================================= -->
+        <section id="lists">
+        <h3>3.1 Lists</h3>
+        
+        <!-- Unordered Lists -->
+        <h4>3.1.1 Unordered Lists (&lt;ul&gt;)</h4>
+        <p>
+            Unordered lists group a series of related items in no specific order. The list items are typically marked with bullet points.
+        </p>
+        <pre><code>&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        <div class="diagram">
+            Diagram: A visual representation of a list with bullet points.
+        </div>
+        
+        <!-- Ordered Lists -->
+        <h4>3.1.2 Ordered Lists (&lt;ol&gt;)</h4>
+        <p>
+            Ordered lists display items in a sequential order, typically numbered. This is useful when the order of the items matters.
+        </p>
+        <pre><code>&lt;ol&gt;
+    &lt;li&gt;Step 1: Introduction&lt;/li&gt;
+    &lt;li&gt;Step 2: Details&lt;/li&gt;
+    &lt;li&gt;Step 3: Conclusion&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+        <div class="diagram">
+            Diagram: A numbered list showing a sequence of steps.
+        </div>
+        
+        <!-- Definition Lists -->
+        <h4>3.1.3 Definition Lists (&lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;)</h4>
+        <p>
+            Definition lists are ideal for pairing terms and definitions. The <code>&lt;dl&gt;</code> element wraps several pairs of <code>&lt;dt&gt;</code> (definition term) and <code>&lt;dd&gt;</code> (definition description) elements.
+        </p>
+        <pre><code>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+        <div class="diagram">
+            Diagram: A table-like diagram showing term–definition pairs.
+        </div>
+        </section>
+        
+        <!-- ======================================================= -->
+        <!-- 3.2 Links                                           -->
+        <!-- ======================================================= -->
+        <section id="links">
+        <h3>3.2 Links</h3>
+        
+        <!-- Basic Link Example -->
+        <h4>3.2.1 Basic Link Example</h4>
+        <p>
+            Links, created using the anchor tag (<code>&lt;a&gt;</code>), connect different resources. Here’s a basic example:
+        </p>
+        <pre><code>&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;</code></pre>
+        <div class="diagram">
+            Diagram: A simple clickable text link.
+        </div>
+        
+        <!-- Internal vs. External Links -->
+        <h4>3.2.2 Internal vs. External Links</h4>
+        <p>
+            Internal links point to another page within the same site, while external links lead to pages on a different website.
+        </p>
+        <pre><code><!-- Internal Link Example -->
+&lt;a href="/about.html"&gt;About Us&lt;/a&gt;
+
+<!-- External Link Example -->
+&lt;a href="https://www.externalwebsite.com" target="_blank" rel="noopener"&gt;External Site&lt;/a&gt;</code></pre>
+        <div class="diagram">
+            Diagram: Two columns showing internal navigation and an external link (with a new window indicator).
+        </div>
+        
+        <!-- Mailto Links -->
+        <h4>3.2.3 Mailto Links</h4>
+        <p>
+            A mailto link opens the user’s default email program to send an email. It uses the <code>mailto:</code> protocol.
+        </p>
+        <pre><code>&lt;a href="mailto:someone@example.com"&gt;Send Email&lt;/a&gt;</code></pre>
+        <div class="diagram">
+            Diagram: An envelope icon with a mailto link example.
+        </div>
+        </section>
+        
+        <!-- ======================================================= -->
+        <!-- 3.3 Images                                          -->
+        <!-- ======================================================= -->
+        <section id="images">
+        <h3>3.3 Images</h3>
+        
+        <!-- Key Attributes -->
+        <h4>3.3.1 Key Attributes (src, alt, width, height)</h4>
+        <p>
+            The <code>&lt;img&gt;</code> tag is used to embed images. Key attributes include:
+            <br><strong>src:</strong> URL of the image.
+            <br><strong>alt:</strong> Alternative text for accessibility.
+            <br><strong>width</strong> and <strong>height</strong> to define the dimensions.
+        </p>
+        <pre><code>&lt;img src="path/to/image.jpg" alt="Description of Image" width="300" height="200"&gt;</code></pre>
+        <div class="diagram">
+            Diagram: A layout showing an image with labeled attributes (src, alt, width, height).
+        </div>
+        
+        <!-- Example Usage -->
+        <h4>3.3.2 Example Usage</h4>
+        <p>
+            Here’s a complete example utilizing the proper attributes for an image:
+        </p>
+        <pre><code>&lt;figure&gt;
+    &lt;img src="landscape.jpg" alt="Beautiful mountain landscape" width="600" height="400"&gt;
+    &lt;figcaption&gt;A breathtaking view of the mountains.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+        <div class="diagram">
+            Diagram: A figure block annotated with an image and caption.
+        </div>
+        
+        <!-- Supported Formats -->
+        <h4>3.3.3 Supported Formats</h4>
+        <p>
+            Common image formats include JPEG, PNG, GIF, WebP, and SVG. Choose the appropriate format based on image quality and performance needs.
+        </p>
+        <pre><code>/* No specific HTML tag is needed here, just understand the formats:
+JPEG (.jpg, .jpeg)
+PNG (.png)
+GIF (.gif)
+WebP (.webp)
+SVG (.svg) */</code></pre>
+        <div class="diagram">
+            Diagram: An infographic listing image formats with pros/cons.
+        </div>
+        </section>
+        
+        <!-- ======================================================= -->
+        <!-- 3.4 Tables                                          -->
+        <!-- ======================================================= -->
+        <section id="tables">
+        <h3>3.4 Tables</h3>
+        
+        <!-- Basic Table Structure -->
+        <h4>3.4.1 Basic Table Structure</h4>
+        <p>
+            Tables are used for displaying tabular data. A basic table includes a <code>&lt;table&gt;</code> element along with <code>&lt;tr&gt;</code> (table row), <code>&lt;th&gt;</code> (header cell), and <code>&lt;td&gt;</code> (data cell) elements.
+        </p>
+        <pre><code>&lt;table&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Header 1&lt;/th&gt;
+        &lt;th&gt;Header 2&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Data 1&lt;/td&gt;
+        &lt;td&gt;Data 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+        <div class="diagram">
+            Diagram: A table layout with a header row and data rows.
+        </div>
+        
+        <!-- Merging Cells -->
+        <h4>3.4.2 Merging Cells</h4>
+        <p>
+            Use the <code>colspan</code> and <code>rowspan</code> attributes to merge cells horizontally or vertically.
+        </p>
+        <pre><code>&lt;table&gt;
+    &lt;tr&gt;
+    &lt;th colspan="2"&gt;Merged Header&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+    &lt;td rowspan="2"&gt;Merged Cell&lt;/td&gt;
+    &lt;td&gt;Data&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+    &lt;td&gt;More Data&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        <div class="diagram">
+            Diagram: A visual showing merged cells within a table.
+        </div>
+        </section>
+        
+        <!-- ======================================================= -->
+        <!-- 3.5 Forms                                           -->
+        <!-- ======================================================= -->
+        <section id="forms">
+        <h3>3.5 Forms</h3>
+        
+        <!-- Core Elements -->
+        <h4>3.5.1 Core Elements (&lt;form&gt;, &lt;input&gt;, &lt;textarea&gt;, &lt;select&gt;)</h4>
+        <p>
+            Forms are essential for user input and interaction. The core elements include:
+            <br><code>&lt;form&gt;</code> – Container for form elements.
+            <br><code>&lt;input&gt;</code> – For single-line input.
+            <br><code>&lt;textarea&gt;</code> – For multi-line input.
+            <br><code>&lt;select&gt;</code> – For drop-down menus.
+        </p>
+        <pre><code>&lt;form action="/submit" method="post"&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username"&gt;
+    
+    &lt;label for="bio"&gt;Biography:&lt;/label&gt;
+    &lt;textarea id="bio" name="bio"&gt;&lt;/textarea&gt;
+    
+    &lt;label for="country"&gt;Country:&lt;/label&gt;
+    &lt;select id="country" name="country"&gt;
+    &lt;option value="usa"&gt;USA&lt;/option&gt;
+    &lt;option value="canada"&gt;Canada&lt;/option&gt;
+    &lt;/select&gt;
+    
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</code></pre>
+        <div class="diagram">
+            Diagram: A flowchart outlining a typical form with input, textarea, and select elements.
+        </div>
+        
+        <!-- Attributes (method, action) -->
+        <h4>3.5.2 Attributes (method, action)</h4>
+        <p>
+            The most critical attributes for a form element are:
+            <br><strong>action:</strong> Specifies the URL where the form data is sent.
+            <br><strong>method:</strong> Specifies the HTTP method (GET or POST).
+        </p>
+        <pre><code>&lt;form action="/submit-form" method="post"&gt;
+    <!-- form fields go here -->
+&lt;/form&gt;</code></pre>
+        <div class="diagram">
+            Diagram: A schematic showing form submission flow with action and method.
+        </div>
+        
+        <!-- Example Usage -->
+        <h4>3.5.3 Example Usage</h4>
+        <p>
+            Below is a comprehensive example demonstrating a contact form:
+        </p>
+        <pre><code>&lt;form action="/send-message" method="post"&gt;
+    &lt;fieldset&gt;
+    &lt;legend&gt;Contact Us&lt;/legend&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    
+    &lt;label for="message"&gt;Message:&lt;/label&gt;
+    &lt;textarea id="message" name="message" rows="5"&gt;&lt;/textarea&gt;
+    
+    &lt;button type="submit"&gt;Send Message&lt;/button&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+        <div class="diagram">
+            Diagram: A complete contact form with labeled sections and a submit button.
+        </div>
+        </section>
+        
+        <!-- ======================================================= -->
+        <!-- 3.6 Adding Audio and Video                          -->
+        <!-- ======================================================= -->
+        <section id="media">
+        <h3>3.6 Adding Audio and Video</h3>
+        
+        <!-- <video> and <audio> Tags -->
+        <h4>3.6.1 &lt;video&gt; and &lt;audio&gt; Tags</h4>
+        <p>
+            HTML5 provides the <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code> elements to embed media content. These elements enable playback controls and support streaming.
+        </p>
+        <pre><code>&lt;video controls&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</code></pre>
+        <div class="diagram">
+            Diagram: Side-by-side layouts showing a video player and an audio player.
+        </div>
+        
+        <!-- Common Attributes -->
+        <h4>3.6.2 Common Attributes (src, controls, autoplay, loop, muted)</h4>
+        <p>
+            Common attributes for media elements include:
+            <br><strong>src:</strong> Media file location.
+            <br><strong>controls:</strong> Displays basic media controls.
+            <br><strong>autoplay:</strong> Starts media playback automatically.
+            <br><strong>loop:</strong> Repeats media continuously.
+            <br><strong>muted:</strong> Mutes the media by default.
+        </p>
+        <pre><code>&lt;video src="clip.mp4" controls autoplay loop muted&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;</code></pre>
+        <div class="diagram">
+            Diagram: An annotated video element highlighting each attribute.
+        </div>
+        
+        <!-- Supported Formats -->
+        <h4>3.6.3 Supported Formats</h4>
+        <p>
+            For video, commonly supported formats include MP4, WebM, and Ogg. For audio, supported formats usually are MP3, WAV, and Ogg.
+        </p>
+        <pre><code>&lt;!-- Video Formats --&gt;
+MP4 (.mp4)
+WebM (.webm)
+Ogg (.ogv)
+
+&lt;!-- Audio Formats --&gt;
+MP3 (.mp3)
+WAV (.wav)
+Ogg (.ogg)
+</code></pre>
+        <div class="diagram">
+            Diagram: A side-by-side infographic listing supported media formats.
+        </div>
+        </section>
+        
+    </section>
+    <p id="goback"><a href="../../index.html">Go Back?</a></p>
+   
+
+    <footer>
+        <p>&copy; 2025 Semantic HTML Tutorial</p>
+        <p><a href="../../index.html">Go Back?</a></p>
+    </footer>
+    
+
+</main>
+    <script src="script.js"></script>
+    <script>
+      // Helper: Check if an element's center is within the threshold of the viewport center.
+      function isElementNearCenter(elem, threshold = 50) {
+        const rect = elem.getBoundingClientRect();
+        const elemCenter = rect.top + rect.height / 2;
+        const viewportCenter = window.innerHeight / 2;
+        return Math.abs(elemCenter - viewportCenter) < threshold;
+      }
+      
+      // Update which elements should be "lifted" based on their position relative to the viewport center.
+      function updateCenterLift() {
+        document.querySelectorAll("code").forEach(elem => {
+          if (isElementNearCenter(elem)) {
+            elem.classList.add('lifted');
+          } else {
+            elem.classList.remove('lifted');
+          }
+        });
+      }
+      
+      // Listen to scroll and resize events, then update the lifted state.
+      window.addEventListener("scroll", updateCenterLift);
+      window.addEventListener("resize", updateCenterLift);
+      
+      // Initial check on page load.
+      updateCenterLift();
+    </script>
+</body>
+</html>
